@@ -1,0 +1,16 @@
+---
+title: News
+---
+
+<div class="m-3">
+<h1>CAUSE projects</h1>
+
+<ul>
+  {% for project in site.projects %}
+    <li>
+      <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+      {{ project.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
+</div>

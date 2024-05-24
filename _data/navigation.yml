@@ -1,8 +1,12 @@
 - name: Home
   link: /
-- name: About
-  link: /about.html
-- name: Blog
-  link: /blog.html
-- name: Staff
-  link: /staff.html
+- name: Apply
+  link: /apply.html
+- name: PIs
+  link: /pis.html
+- name: Projects
+  link: /projects.html
+- name: Doctoral Researchers
+  link: /researchers.html
+- name: News
+  link: /news.html

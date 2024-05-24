@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<div class="row align-items-start gx-5">
+    <div class="col-md-auto">
+        {% assign lead = site.pis | where: 'short_name', page.lead | first %}
+        <p class="view"> Lead-Supervisors: 
+            <ul class="list-inline">
+            <a href="{{ lead.url }}">{{ lead.name }}</a>
+            </ul>
+        </p>
+    </div>
+    <div class="col-md-auto">
+        <p class="view"> Co-Supervisors:
+        <ul class="list-inline">
+        {% assign cosupervisor_names = page.cosupervisors | split: "," %}
+        {% for cosupervisor_name in cosupervisor_names %}
+            {% assign cosupervisor = site.pis | where: 'short_name', cosupervisor_name | first %}
+            <li class="list-inline-item"><a href="{{ cosupervisor.url }}">{{ cosupervisor.name }}</a></li>
+        {% endfor %}
+        </ul>
+        </p>
+    </div>
+</div>
+
+{{content}}
+
