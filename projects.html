@@ -8,8 +8,8 @@ title: News
 <ul>
   {% for project in site.projects %}
     <li>
-      <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
-      {{ project.excerpt }}
+      <h2><a href="{{ project.url }}">Project {{ project.name | replace:'.md',''}} {{ project.title }}</a></h2>
+      <!-- {{ project.excerpt }} --!>
     </li>
   {% endfor %}
 </ul>
