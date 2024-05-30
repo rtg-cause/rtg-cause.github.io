@@ -7,13 +7,13 @@ layout: default
 <div class="row align-items-start gx-5">
     <div class="col-md-auto">
         {% assign lead = site.pis | where: 'short_name', page.lead | first %}
-        <p class="view"> Lead-Supervisors: 
+        <p class="view"> Lead-Supervisor: 
             <ul class="list-inline">
             <a href="{{ lead.url }}">{{ lead.name }}</a>
             </ul>
         </p>
     </div>
-    <div class="col-md-auto">
+    <!--<div class="col-md-auto">
         <p class="view"> Co-Supervisors:
         <ul class="list-inline">
         {% assign cosupervisor_names = page.cosupervisors | split: "," %}
@@ -23,7 +23,7 @@ layout: default
         {% endfor %}
         </ul>
         </p>
-    </div>
+    </div> --!>
 </div>
 
 {{content}}
