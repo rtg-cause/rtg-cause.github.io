@@ -30,6 +30,10 @@ defaults:
     values:
       layout: "project"
   - scope:
+      path: "assets/img"
+    values:
+      image: true
+  - scope:
       path: ""
     values:
       layout: "default"
