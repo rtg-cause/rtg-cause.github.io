@@ -1,12 +1,12 @@
 - name: Home
   link: /
 - name: Apply
-  link: /apply.html
+  link: /apply
 - name: PIs
-  link: /pis.html
+  link: /pis
 - name: Projects
-  link: /projects.html
+  link: /projects
 - name: Doctoral Researchers
-  link: /researchers.html
+  link: /researchers
 - name: News
-  link: /news.html
+  link: /news

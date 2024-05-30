@@ -7,7 +7,8 @@ title: PIs
 {% for author in site.pis %}
 <div class="col">
 <div class="card" style="width: 18rem;">
-  <img width="100%" src="assets/img/portraits/{{ author.short_name }}.webp" alt="Portrait {{ author.name }}" />
+  {% assign portrait = site.static_files | where:"basename", author.short_name |  where:"extname", ".webp" | first %}
+  <img width="100%" src="{{ portrait.path }}" alt="Portrait {{ author.name }}" />
   <div class="card-body">
     <h5 class="card-title"><a class="stretched-link" href="{{ author.url }}">{{ author.name }}</a></h5>
   </div>
