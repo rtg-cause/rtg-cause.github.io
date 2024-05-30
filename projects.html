@@ -3,14 +3,25 @@ title: News
 ---
 
 <div class="m-3">
-<h1>CAUSE projects</h1>
 
 <ul>
-  {% for project in site.projects %}
+  {% assign projects_sorted = site.projects | sort: "path" %}
+  {% for project in projects_sorted %}
     <li>
       {% assign lead = site.pis | where: 'short_name', project.lead | first %}
-      <h2><a href="{{ project.url }}">Project {{ project.name | replace:'.md',''}} {{ project.title }} ({{ lead.name }})</a></h2>
-      <!-- {{ project.excerpt }} --!>
+      <p>
+      <a href="{{ project.url }}">
+        <span class="fs-3">Project {{ project.id | split: "/" | last }}:</span>
+        <span class="fs-3">{{ project.title }}</span>
+      </a>
+      <br>
+      <span class="fs-5">Lead-supervisor: <a href="{{ lead.url }}">{{ lead.name }}</a></span>  
+      <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">
+        <div class="card card-body">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+      </div>
+      </p>
     </li>
   {% endfor %}
 </ul>
