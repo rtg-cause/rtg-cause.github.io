@@ -1,6 +1,6 @@
 ---
 short_name: beetz
-name: Prof. Rolf Beetz
+name: Prof. Michael Beetz
 position: Full Professor
 link: https://ai.uni-bremen.de/team/michael_beetz
 ---
