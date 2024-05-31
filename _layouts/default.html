@@ -17,7 +17,7 @@
     <div class="wrapper">
       <header>
         <div class="container">
-          {% assign logo = site.static_files | where: "basename", "cause_logo_tr_bg_small" | first %}
+          {% assign logo = site.static_files | where: "basename", "causeLogoAbs" | first %}
           {% include navigation.html logo_url=logo.path %}
         </div>
       </header>
