@@ -20,7 +20,7 @@
       {% assign unio_logo_thumb = site.static_files | where: "basename", "UOL-Logo_thumb" | first %}
       <header>
         <div class="container">
-          {% assign logo = site.static_files | where: "basename", "causeLogoAbsTr" | first %}
+          {% assign logo = site.static_files | where: "basename", "cause_color" | first %}
           {% include navigation.html logo_url=logo.path tuhh_logo_url=tuhh_logo_thumb.path unib_logo_url=unib_logo_thumb.path unio_logo_url=unio_logo_thumb.path %}
         </div>
       </header>
