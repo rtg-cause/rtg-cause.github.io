@@ -15,4 +15,6 @@ CAUSE focuses on the technical, logical, and algorithmic basis of self-explanati
 
 The research training group spans three institutions implementing a consortium equally versed in hardware, software, and systems, as well as in theoretical foundations, development methods,  and practical applications. Within CAUSE, doctoral researchers are immersed into state-of-the-art research concerning novel system design concepts enabling and building upon self-explanation. They develop scientific independence and acquire the timely skills of distributed team-work, working in varying collaborative contexts, adapting to diverse knowledge backgrounds, and intense technical communication.
 
+Researchers from three institutions -- the Hamburg University of Technology, the University of Bremen, and the University of Oldenburg -- team up to comprehensively cover Cyber-Physical Systems (CPS) design on all abstraction levels. 
+Four cohorts of eight to ten doctoral researchers plus associated researchers from the participating groups are following a structured graduation programme. The first cohort starts in November 2024.
 
