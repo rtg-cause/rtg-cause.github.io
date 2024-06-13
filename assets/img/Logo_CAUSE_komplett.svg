@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 312.11 74.39">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: SharpSans-Bold, 'Sharp Sans';
+        font-size: 26.55px;
+        font-weight: 700;
+        letter-spacing: .05em;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #145179;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #d5102f;
+      }
+
+      .cls-5 {
+        fill: #d3d6d9;
+        font-family: SharpSans-Semibold, 'Sharp Sans';
+        font-size: 15.15px;
+        font-weight: 600;
+        letter-spacing: .1em;
+      }
+
+      .cls-4 {
+        fill: #2ab9ce;
+      }
+    </style>
+  </defs>
+  <path class="cls-4" d="M44.07,9.86v-3.32C27.93,22.88,10.53,41.17,8.77,65.5h13.03c1.56-21.05,9.65-40.26,22.27-55.64Z"/>
+  <text class="cls-1" transform="translate(79.07 45.3)"><tspan x="0" y="0">CAUSE</tspan></text>
+  <text class="cls-5" transform="translate(79.07 65.06)"><tspan x="0" y="0">Research Training Group.</tspan></text>
+  <path class="cls-3" d="M62.1,9.7v-3.32c-16.13,16.34-33.53,34.63-35.3,58.96h13.03c1.56-21.05,9.65-40.26,22.27-55.64Z"/>
+  <path class="cls-2" d="M79.87,9.7v-3.32c-16.13,16.34-33.53,34.63-35.3,58.96h13.03c1.56-21.05,9.65-40.26,22.27-55.64Z"/>
+</svg>
