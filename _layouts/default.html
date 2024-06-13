@@ -15,13 +15,13 @@
   </head>
   <body>
     <div class="wrapper">
-      {% assign tuhh_logo_thumb = site.static_files | where: "basename", "TUHH_logo_rgb" | first %}
-      {% assign unib_logo_thumb = site.static_files | where: "basename", "logo_ub_2021_thumb" | first %}
-      {% assign unio_logo_thumb = site.static_files | where: "basename", "UOL-Logo_thumb" | first %}
+      {% assign tuhh_logo = site.static_files | where: "basename", "TUHH_logo-wortmarke" | first %}
+      {% assign unib_logo = site.static_files | where: "basename", "unibremen_big" | first %}
+      {% assign unio_logo = site.static_files | where: "basename", "UOL-Logo" | first %}
       <header>
         <div class="container">
           {% assign logo = site.static_files | where: "basename", "cause_color" | first %}
-          {% include navigation.html logo_url=logo.path tuhh_logo_url=tuhh_logo_thumb.path unib_logo_url=unib_logo_thumb.path unio_logo_url=unio_logo_thumb.path %}
+          {% include navigation.html logo_url=logo.path tuhh_logo_url=tuhh_logo.path unib_logo_url=unib_logo.path unio_logo_url=unio_logo.path %}
         </div>
       </header>
       <section>
@@ -29,9 +29,6 @@
         {{ content }}
         </div>
       </section>
-      {% assign tuhh_logo = site.static_files | where: "basename", "TUHH_logo-wortmarke_en_rgb" | first %}
-      {% assign unib_logo = site.static_files | where: "basename", "logo_ub_2021" | first %}
-      {% assign unio_logo = site.static_files | where: "basename", "UOL-Logo" | first %}
       {% include footer.html tuhh_logo_url=tuhh_logo.path unib_logo_url=unib_logo.path unio_logo_url=unio_logo.path %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
