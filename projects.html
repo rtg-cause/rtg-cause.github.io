@@ -13,11 +13,11 @@ title: Projects
       {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
       <p>
       <a href="{{ project.url }}">
-        <span class="fs-3">Project {{ project.id | split: "/" | last }}:</span>
-        <span class="fs-3">{{ project.title }}</span>
+        <span class="fs-4">Project {{ project.id | split: "/" | last }}:</span>
+        <span class="fs-4">{{ project.title }}</span>
       </a>
       <br>
-      <span class="fs-5">Lead-supervisor: <a href="{{ lead.url }}">{{ lead.name }}</a>, {{ lead.institution }}</span>  
+      <span class="fs-5">Lead-supervisor: <a href="{{ lead.url }}">{{ lead.name }}({{ lead.city }})</a></span>;  
                          Co-supervisors: <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }}</a></span>  
                                         <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a></span>  
       <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">

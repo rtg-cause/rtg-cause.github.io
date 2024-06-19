@@ -12,8 +12,15 @@ layout: default
 <div class="row align-items-start gx-5">
     <div class="col-md-auto">
         {% assign lead = site.pis | where: 'short_name', page.lead | first %}
+        {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
+        {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
         <p class="view"> Lead-Supervisor: 
-            <a href="{{ lead.url }}">{{ lead.name }}</a>
+            <a href="{{ lead.url }}">{{ lead.name }}</a>, {{ lead.institution }}
+        </p>
+
+        <p class="view"> Co-Supervisors: 
+                         <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }}</a>, 
+                         <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a>
         </p>
     </div>
 </div>
