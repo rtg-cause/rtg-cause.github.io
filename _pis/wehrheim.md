@@ -7,3 +7,4 @@ city: Oldenburg
 institution: University of Oldenburg
 ---
 Prof. Heike Wehrheim heads the Formal Methods group at the Carl von Ossietzky University of Oldenburg.
+Her research focuses on correctness of sequential and concurrent software, developing automatic and  deductive proof techniques. 
