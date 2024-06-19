@@ -9,13 +9,17 @@ title: Projects
   {% for project in projects_sorted %}
     <li>
       {% assign lead = site.pis | where: 'short_name', project.lead | first %}
+      {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
+      {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
       <p>
       <a href="{{ project.url }}">
         <span class="fs-3">Project {{ project.id | split: "/" | last }}:</span>
         <span class="fs-3">{{ project.title }}</span>
       </a>
       <br>
-      <span class="fs-5">Lead-supervisor: <a href="{{ lead.url }}">{{ lead.name }}</a></span>  
+      <span class="fs-5">Lead-supervisor: <a href="{{ lead.url }}">{{ lead.name }}</a>, {{ lead.institution }}</span>  
+                         Co-supervisors: <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }}</a></span>  
+                                        <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a></span>  
       <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">
         <div class="card card-body">
           Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
