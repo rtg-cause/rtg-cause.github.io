@@ -17,25 +17,33 @@
     </div>
 </header>
 <!-- Main Content-->
+<div class="main main-raised">
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="col mx-3">
+            <p>
 Today, almost any technical system is digitally controlled which adds to its smartness. Such digitally controlled systems feature many and functionally diverse interacting subsystems, system levels, and connections to other systems. Many problems arising during their design and operation can be traced back to a lack of understanding and consequential mismatches at their interfaces. Avoiding such fallacies, demands mutual explanations of behaviour comprehensible to other systems, designers, developers, and operators. <br>
 
 The research training group CAUSE addresses these issues by striving to make digitally controlled systems self-explaining to developers, users, and other systems.<br>
 Our acronym CAUSE expands to <em>Concepts and Algorithms for – and Usage of – Self-Explaining Digitally Controlled Systems</em>.
 Researchers from three institutions - the Hamburg University of Technology, the University of Bremen, and the University of Oldenburg - team up to comprehensively cover Cyber-Physical Systems (CPS) design on all abstraction levels. 
 Four cohorts of eight to ten doctoral researchers plus associated researchers from the participating groups are following a structured graduation programme. The first cohort starts in November 2024.
+</p>
         </div>
     </div>
+</div>
+</div>
+
+    <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
+            <h1 class="mt-5">News</h1>
             {% for post in site.posts reversed limit: 3 %}
                 <!-- Post preview-->
                 <div class="post-preview">
                     <a href="{{ post.url }}">
-                        <h2 class="post-title">{{ post.title }}</h2>
-                        <h3 class="post-subtitle">{{ post.excerpt }}</h3>
+                        <h4 class="post-title">{{ post.title }}</h4>
+                        <h5 class="post-subtitle">{{ post.excerpt }}</h5>
                     </a>
                     {% assign author = site.authors | where: 'short_name', page.author | first %}
                     {% if author %}
