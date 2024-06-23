@@ -10,17 +10,25 @@ layout: default
 <h1>{{ page.title }}</h1>
 
 <div class="row align-items-start gx-5">
-    <div class="col-md-auto">
+    <div class="col-md-auto me-5">
         {% assign lead = site.pis | where: 'short_name', page.lead | first %}
-        {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
-        {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
-        <p class="view"> Lead-Supervisor: 
-            <a href="{{ lead.url }}">{{ lead.name }}</a>, {{ lead.institution }}
+        <p class="view"> Lead-Supervisor:
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="{{ lead.url }}">{{ lead.name }}</a><br> 
+                    {{ lead.institution }}
+                </li>
+            </ul>
         </p>
-
-        <p class="view"> Co-Supervisors: 
-                         <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }}</a>, 
-                         <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a>
+    </div>
+    <div class="col-md-auto">
+        <p class="view"> Co-Supervisors:
+        <ul class="list-inline">
+            {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
+            {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
+            <li class="list-inline-item"><a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }},</a></li>
+            <li class="list-inline-item"><a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a></li>
+        </ul>
         </p>
     </div>
 </div>
