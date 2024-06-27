@@ -6,7 +6,7 @@ title: Apply
 
 # 10 Doctoral Researchers / Research Associate (m/f/d) on Self-Explaining Digitally Controlled Systems
 
-The [**Research Training Group CAUSE**](https://www.tuhh.de/grk2972/) invites applications for doctoral researchers full time, fully funded  until finalizing the PhD degree for 3 years plus a potential extension of a fourth year. The remuneration is in accordance with [13 TV-L](https://oeffentlicher-dienst.info/c/t/rechner/tv-l/allg?id=tv-l-2025&matrix=1). Positions start from November 1st, 2024.
+The [**Research Training Group CAUSE**](https://www.tuhh.de/grk2972/) invites applications for doctoral researchers full time, fully funded  until finalizing the PhD degree for 3 years plus a potential extension of a fourth year. The remuneration is in accordance with [E13 TV-L](https://oeffentlicher-dienst.info/c/t/rechner/tv-l/allg?id=tv-l-2025&matrix=1). Positions start from November 1st, 2024.
 
 The three universities [Hamburg University of Technology](https://www.tuhh.de/), [University of Bremen](https://www.uni-bremen.de/), and [Carl-von-Ossietzky University of Oldenburg](https://www.uol.de/) jointly run CAUSE. While your primary occupation will be with one of these three universities,  you will participate in an intense cooperation and exchange program with joint supervision by internationally renowned researchers from all three sites.
 
@@ -21,7 +21,7 @@ The [**10 topics for the 10 open positions can be found here**](https://rtg-caus
 * Exposure to an international environment, guest researchers, and educational program
 * Present your research results at international top conferences
 * Stay abroad at international partner universities or engage in research internships in industry
- * Receive a highly competitive salary. The salaries are following the German [13 TV-L](https://oeffentlicher-dienst.info/c/t/rechner/tv-l/allg?id=tv-l-2025&matrix=1) including benefits of German public service like courses for personal talent management. The initial contract runs for 3 years; a forth year is granted upon adequate progess
+ * Receive a highly competitive salary. The salaries are following the German [E13 TV-L](https://oeffentlicher-dienst.info/c/t/rechner/tv-l/allg?id=tv-l-2025&matrix=1) including benefits of German public service like courses for personal talent management. The initial contract runs for 3 years; a forth year is granted upon adequate progess
  * Work and live in a lively Northern German city
  * Join a university that is family-friendly and sustainable with high performance and quality standards  
 
