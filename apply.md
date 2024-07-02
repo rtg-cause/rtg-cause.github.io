@@ -45,6 +45,6 @@ For further information please contact [Prof. Görschwin Fey (TU Hamburg)](mailt
 
 We particularly encourage women to apply. Due to their underrepresentation in computer science, they will be given priority in cases of equal suitability, qualifications and professional performance.
 
-Please send your complete application documents (cover letter, curriculum vitae in table form, proof of (soon to be) completed training and/or university degree, job references or certificates of employment) via the online application system of TUHH. The link will be available soon. Applications will be evaluated by CAUSE researchers and administrative personnel of the three participating universities. The application deadline is July 31, 2024.
+Please send your complete application documents (cover letter, curriculum vitae in table form, proof of (soon to be) completed training and/or university degree, job references or certificates of employment) via the online application system of TUHH. Applications will be evaluated by CAUSE researchers and administrative personnel of the three participating universities. The application deadline is July 31, 2024.
 
 Submit your [**application via the online application system of TUHH**](https://stellenportal.tuhh.de/9mn9e).
