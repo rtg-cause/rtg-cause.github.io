@@ -47,7 +47,7 @@ Four cohorts of eight to ten doctoral researchers plus associated researchers fr
                     </a>
                     <small>{{ post.date | date: "%-d %B %Y" }}</small>
                     <h6 class="post-subtitle">{{ post.excerpt }}</h6>
-                    {% assign author = site.authors | where: 'short_name', post.author | first %}
+                    {% assign author = site.pis | concat: site.authors | where: 'short_name', post.author | first %}
                     {% if author %}
                     <p class="post-meta">
                         Posted by
