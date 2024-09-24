@@ -8,36 +8,18 @@
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="site-heading">
+                <div class="site-heading py-xxl-4">
                     <h1>DFG Research Training Group <strong>CAUSE</strong></h1>
-                    <a class="btn btn-primary m-4 btn-lg shadow-lg" style="--bs-btn-font-weight: 600;" role="button" href="apply">Apply here to join<br>our first cohort of PhD students!</a>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <!-- Main Content-->
-<div class="main main-raised">
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col mx-3">
-            <p>
-Today, almost any technical system is digitally controlled which adds to its smartness. Such digitally controlled systems feature many and functionally diverse interacting subsystems, system levels, and connections to other systems. Many problems arising during their design and operation can be traced back to a lack of understanding and consequential mismatches at their interfaces. Avoiding such fallacies, demands mutual explanations of behaviour comprehensible to other systems, designers, developers, and operators. <br>
-
-The research training group CAUSE addresses these issues by striving to make digitally controlled systems self-explaining to developers, users, and other systems.<br>
-Our acronym CAUSE expands to <em>Concepts and Algorithms for – and Usage of – Self-Explaining Digitally Controlled Systems</em>.
-Researchers from three institutions - the Hamburg University of Technology, the University of Bremen, and the University of Oldenburg - team up to comprehensively cover Cyber-Physical Systems (CPS) design on all abstraction levels. 
-Four cohorts of eight to ten doctoral researchers plus associated researchers from the participating groups are following a structured graduation programme. The first cohort starts in November 2024.
-</p>
-        </div>
-    </div>
-</div>
-</div>
-
-    <div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
-            <h1 class="mt-5">Latest news:</h1>
+            <h1 class="mt-2">Latest news:</h1>
             <hr class="my-4" />
             {% for post in site.posts limit: 3 %}
                 <!-- Post preview-->
@@ -69,7 +51,8 @@ Four cohorts of eight to ten doctoral researchers plus associated researchers fr
 <div class="container mt-5">
     <div class="row">
         <div class="col align-self-center text-center">
-            <img src="assets/img/CAUSE_Norddeutschland.png" class="mx-auto " alt="Map of North Germany">
+            {% assign map = site.static_files | where:"basename", CAUSE_Norddeutschland | where:"extname", ".png" | first %}
+            <img src="{{ map.path }}" class="mx-auto " alt="Map of North Germany">
         </div>
     </div>
 </div>
