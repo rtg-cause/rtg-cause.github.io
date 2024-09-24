@@ -3,21 +3,22 @@ layout: default
 ---
 
 <div class="container">
-{% include breadcrumb_pis.html pi_name=page.name %}
+    {% include breadcrumb_pis.html pi_name=page.name %}
 </div>
 
-<div class="container rounded bg-white mt-3 mb-5">
+<div class="container rounded bg-white mb-5">
     <div class="row">
-        <div class="col-md-3 border-right">
+        <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <img class="mt-5" width="150px" src="../assets/img/portraits/{{ page.short_name }}.webp">
-            <span class="font-weight-bold pt-3">{{ page.name }}</span>
-            {% if page.link %}
-            <span class="text-black-50"><a href="{{ page.link }}">Personal page</a></span>
-            {% endif %}
+                {% assign portrait = site.static_files | where:"basename", page.short_name | where:"extname", ".webp" | first %}
+                <img class="img-fluid mt-5" src="{{ portrait.path }}" alt="Portrait {{ page.name }}" />
+                <span class="font-weight-bold pt-3">{{ page.name }}</span>
+                {% if page.link %}
+                    <span class="text-black-50"><a href="{{ page.link }}">Personal page</a></span>
+                {% endif %}
+            </div>
         </div>
-        </div>
-        <div class="col-md-5 border-right">
+        <div class="col-md-6 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">About</h4>
@@ -29,10 +30,10 @@ layout: default
                     <h4 class="text-right">Projects</h4>
                 </div>
                 <ul>
-                {% assign filtered_projects = site.projects | where: 'lead', page.short_name %}
-                {% for project in filtered_projects %}
+                    {% assign filtered_projects = site.projects | where: 'lead', page.short_name %}
+                    {% for project in filtered_projects %}
                     <li><a href="{{ project.url }}">{{ project.title }}</a></li>
-                {% endfor %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>
