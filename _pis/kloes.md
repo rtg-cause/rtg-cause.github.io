@@ -2,7 +2,7 @@
 short_name: kloes
 name: Prof. Verena Klös 
 position: Full Professor
-link: https://dblp.org/pid/131/6308.html
+link: https://uol.de/informatik/abteilungen/eingebettete-hardware-/software-systeme/prof-dr-verena-kloes
 city: Oldenburg
 institution: University of Oldenburg
 ---
