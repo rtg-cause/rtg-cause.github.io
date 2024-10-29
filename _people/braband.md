@@ -1,7 +1,7 @@
 ---
-short_name: kowalewski
-name: Prof. Stefan Kowalewski
-link: https://cr.rwth-aachen.de/people/kowalewski-stefan/
+short_name: braband
+name: Jens Braband
+email: jens.braband@siemens.com
 role: advisor
 ---
 

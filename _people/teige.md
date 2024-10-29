@@ -1,7 +1,7 @@
 ---
-short_name: kowalewski
-name: Prof. Stefan Kowalewski
-link: https://cr.rwth-aachen.de/people/kowalewski-stefan/
+short_name: teige
+name: Dr. Tino Teige
+email: tino.teige@btc-embedded.com
 role: advisor
 ---
 

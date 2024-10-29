@@ -1,7 +1,7 @@
 ---
-short_name: kowalewski
-name: Prof. Stefan Kowalewski
-link: https://cr.rwth-aachen.de/people/kowalewski-stefan/
+short_name: bienmueller
+name: Dr. Tom Bienmüller
+email: Tom.Bienmueller@btc-embedded.com
 role: advisor
 ---
 
