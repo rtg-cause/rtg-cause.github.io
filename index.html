@@ -29,7 +29,7 @@
                     </a>
                     <small>{{ post.date | date: "%-d %B %Y" }}</small>
                     <h6 class="post-subtitle">{{ post.excerpt }}</h6>
-                    {% assign author = site.pis | concat: site.authors | where: 'short_name', post.author | first %}
+                    {% assign author = site.pis | concat: site.people | where: 'short_name', post.author | first %}
                     {% if author %}
                     <p class="post-meta">
                         Posted by

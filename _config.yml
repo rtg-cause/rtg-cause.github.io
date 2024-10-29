@@ -1,5 +1,5 @@
 collections:
-  authors:
+  people:
     output: true
   pis:
     output: true
@@ -11,17 +11,12 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "authors"
+      type: "people"
     values:
       layout: "person"
   - scope:
       path: ""
       type: "pis"
-    values:
-      layout: "person"
-  - scope:
-      path: ""
-      type: "researchers"
     values:
       layout: "person"
   - scope:
