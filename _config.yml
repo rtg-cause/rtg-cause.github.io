@@ -13,12 +13,17 @@ defaults:
       path: ""
       type: "authors"
     values:
-      layout: "author"
+      layout: "person"
   - scope:
       path: ""
       type: "pis"
     values:
-      layout: "pi"
+      layout: "person"
+  - scope:
+      path: ""
+      type: "researchers"
+    values:
+      layout: "person"
   - scope:
       path: ""
       type: "posts"
