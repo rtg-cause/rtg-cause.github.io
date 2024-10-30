@@ -2,6 +2,10 @@
 title: Apply
 ---
 
+<div class="container">
+  {% include breadcrumb.html current_page=page.title %}
+</div>
+
 # 8 Doctoral Researchers / Research Associate (m/f/d) on Self-Explaining Digitally Controlled Systems
 
 Our first cohort of doctoral researchers starts in November 2024. The call for applications is closed.
