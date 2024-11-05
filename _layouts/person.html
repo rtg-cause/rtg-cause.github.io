@@ -11,6 +11,9 @@ layout: default
         <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                 {% assign portrait = site.static_files | where:"basename", page.short_name | where:"extname", ".webp" | first %}
+                {% if portrait == nil %}
+                    {% assign portrait = site.static_files | where:"basename", "person" | where:"extname", ".webp" | first %}
+                {% endif %}
                 <img class="img-fluid mt-5" src="{{ portrait.path }}" alt="Portrait {{ page.name }}" />
                 <span class="font-weight-bold pt-3">{{ page.name }}</span>
                 {% if page.link %}

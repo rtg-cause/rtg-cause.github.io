@@ -1,7 +1,7 @@
 ---
-short_name: kowalewski
-name: Prof. Stefan Kowalewski
-link: https://cr.rwth-aachen.de/people/kowalewski-stefan/
+short_name: schmidt
+name: Maximilian Schmidt
+link: https://www.tuhh.de/es/ce/people/mschmidt
 role: associate
 ---
 
