@@ -1,7 +1,7 @@
 ---
 short_name: david
 name: Ivo David Oliveira
-link: 
+email: ivo.david@uni-oldenburg.de 
 role: fellow
 ---
 
