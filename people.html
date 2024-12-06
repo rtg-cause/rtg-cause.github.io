@@ -6,57 +6,99 @@ title: People
   {% include breadcrumb.html current_page=page.title %}
 </div>
 
+<h1 class="display-3 text-center pb-3">Fellows</h1>
+<div class="grid m-3 g-3">
+
+  {% for person in site.people %}
+    {% if person.role == "fellow" %}
+      <div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
+        <div class="card">
+          {% assign portrait = site.static_files | where: "basename", person.short_name | where: "extname", ".webp" | first %}
+          {% if portrait == nil %}
+            {% assign portrait = site.static_files | where: "basename", "person" | where: "extname", ".webp" | first %}
+          {% endif %}
+          <img
+            class="img-fluid bg-secondary bg-gradient"
+            src="{{ portrait.path }}"
+            alt="Portrait {{ person.name }}" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="stretched-link" href="{{ person.url  | remove: ".html" }}">{{ person.name }}</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</div>
+
 <h1 class="display-3 text-center pb-3">Supervisors</h1>
 <div class="grid m-3 g-3">
 
-{% for author in site.pis %}
-<div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
-<div class="card">
-  {% assign portrait = site.static_files | where:"basename", author.short_name | where:"extname", ".webp" | first %}
-  <img class="img-fluid" src="{{ portrait.path }}" alt="Portrait {{ author.name }}" />
-  <div class="card-body">
-    <h5 class="card-title"><a class="stretched-link" href="{{ author.url  | remove: ".html" }}">{{ author.name }}</a></h5>
-  </div>
-</div>
-</div>
-{% endfor %}
+  {% for author in site.pis %}
+    <div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
+      <div class="card">
+        {% assign portrait = site.static_files | where: "basename", author.short_name | where: "extname", ".webp" | first %}
+        <img
+          class="img-fluid"
+          src="{{ portrait.path }}"
+          alt="Portrait {{ author.name }}" />
+        <div class="card-body">
+          <h5 class="card-title">
+            <a class="stretched-link" href="{{ author.url  | remove: ".html" }}">{{ author.name }}</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 
 </div>
 
 <h1 class="display-3 text-center pb-3">Advisory Board</h1>
 <div class="grid m-3 g-3">
-{% assign non_hidden_people = site.people | where_exp: "item", "item.hide == nil" %}
-{% for person in non_hidden_people %}
-  {% if person.role == "advisor" %}
-<div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
-<div class="card">
-  {% assign portrait = site.static_files | where:"basename", person.short_name | where:"extname", ".webp" | first %}
-  {% if portrait == nil %}
-    {% assign portrait = site.static_files | where:"basename", "person" | where:"extname", ".webp" | first %}
-  {% endif %}
-  <img class="img-fluid bg-secondary bg-gradient" src="{{ portrait.path }}" alt="Portrait {{ person.name }}" />
-  <div class="card-body">
-    <h5 class="card-title"><a class="stretched-link" href="{{ person.url  | remove: ".html" }}">{{ person.name }}</a></h5>
-  </div>
-</div>
-</div>
-  {% endif %}
-{% endfor %}
+  {% assign non_hidden_people = site.people | where_exp: "item", "item.hide == nil" %}
+  {% for person in non_hidden_people %}
+    {% if person.role == "advisor" %}
+      <div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
+        <div class="card">
+          {% assign portrait = site.static_files | where: "basename", person.short_name | where: "extname", ".webp" | first %}
+          {% if portrait == nil %}
+            {% assign portrait = site.static_files | where: "basename", "person" | where: "extname", ".webp" | first %}
+          {% endif %}
+          <img
+            class="img-fluid bg-secondary bg-gradient"
+            src="{{ portrait.path }}"
+            alt="Portrait {{ person.name }}" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="stretched-link" href="{{ person.url  | remove: ".html" }}">{{ person.name }}</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
 
 <h1 class="display-3 text-center pb-3">Office</h1>
 <div class="grid m-3 g-3">
-{% for person in site.people %}
-  {% if person.role == "coordinator" %}
-<div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
-<div class="card">
-  {% assign portrait = site.static_files | where:"basename", person.short_name | where:"extname", ".webp" | first %}
-  <img class="img-fluid" src="{{ portrait.path }}" alt="Portrait {{ person.name }}" />
-  <div class="card-body">
-    <h5 class="card-title"><a class="stretched-link" href="{{ person.url  | remove: ".html" }}">{{ person.name }}</a></h5>
-  </div>
-</div>
-</div>
-  {% endif %}
-{% endfor %}
+  {% for person in site.people %}
+    {% if person.role == "coordinator" %}
+      <div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
+        <div class="card">
+          {% assign portrait = site.static_files | where: "basename", person.short_name | where: "extname", ".webp" | first %}
+          <img
+            class="img-fluid"
+            src="{{ portrait.path }}"
+            alt="Portrait {{ person.name }}" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="stretched-link" href="{{ person.url  | remove: ".html" }}">{{ person.name }}</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
