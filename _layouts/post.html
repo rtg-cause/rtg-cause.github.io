@@ -7,8 +7,10 @@ layout: default
 
 {% assign author = site.pis | concat: site.people | where: 'short_name', page.author | first %}
 {% if author %}
-    <p class="view"> by <a href="{{ author.url }}">{{ author.name }}</a></p>
+  <p class="view">
+    by
+    <a href="{{ author.url | remove: ".html" }}">{{ author.name }}</a>
+  </p>
 {% endif %}
 
-{{content}}
-
+{{ content }}

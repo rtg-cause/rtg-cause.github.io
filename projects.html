@@ -17,7 +17,7 @@ title: Projects
         {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
         {% assign fellow = site.people | where_exp: "item", "item.short_name == project.fellow" | first %}
         <p>
-          <a href="{{ project.url }}">
+          <a href="{{ project.url | remove: ".html" }}">
             <span class="fs-4">Project {{ project.id | split: "/" | last }}:</span>
             <span class="fs-4">{{ project.title }}</span>
           </a>

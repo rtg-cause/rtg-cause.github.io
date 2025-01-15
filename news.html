@@ -8,23 +8,25 @@ title: News
 
 <div class="row m-3 g-3">
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <div class="post-preview">
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <small>{{ post.date | date: "%-d %B %Y" }}</small>
-        <h6 class="post-subtitle">{{ post.excerpt }}</h6>
-        {% assign author = site.pis | concat: site.people | where: 'short_name', post.author | first %}
-        {% if author %}
-        <p class="post-meta">
-            Posted by
-            <a href="{{ author.url }}">{{ author.name }}</a>
-        </p>
-        {% endif %}
-      </div>
-    </li>
-  {% endfor %}
-</ul>
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <div class="post-preview">
+          <h3>
+            <a href="{{ post.url | remove: ".html" }}">{{ post.title }}</a>
+          </h3>
+          <small>{{ post.date | date: "%-d %B %Y" }}</small>
+          <h6 class="post-subtitle">{{ post.excerpt }}</h6>
+          {% assign author = site.pis | concat: site.people | where: 'short_name', post.author | first %}
+          {% if author %}
+            <p class="post-meta">
+              Posted by
+              <a href="{{ author.url | remove: ".html" }}">{{ author.name }}</a>
+            </p>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
 
 </div>
