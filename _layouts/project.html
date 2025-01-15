@@ -15,7 +15,7 @@ layout: default
       <div class="col-md-auto me-5">
         <p class="view">
           Fellow:
-          <a href="{{ fellow.url }}">{{ fellow.name }}</a>
+          <a href="{{ fellow.url | remove: ".html" }}">{{ fellow.name }}</a>
         </p>
       </div>
     </div>
@@ -28,7 +28,7 @@ layout: default
         Supervisor:
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="{{ supervisor.url }}">{{ supervisor.name }}</a><br>
+            <a href="{{ supervisor.url | remove: ".html" }}">{{ supervisor.name }}</a><br>
             {{ supervisor.institution }}
           </li>
         </ul>
@@ -41,10 +41,10 @@ layout: default
           {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
           {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
           <li class="list-inline-item">
-            <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }},</a>
+            <a href="{{ cosupervisor1.url | remove: ".html" }}">{{ cosupervisor1.name }},</a>
           </li>
           <li class="list-inline-item">
-            <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a>
+            <a href="{{ cosupervisor2.url | remove: ".html" }}">{{ cosupervisor2.name }}</a>
           </li>
         </ul>
       </p>

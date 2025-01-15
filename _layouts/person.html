@@ -45,7 +45,7 @@ layout: default
           </div>
           <ul>
             {% assign fellows_projects = site.projects | where_exp: "project", "project.fellow == page.short_name" %}
-            {% assign filtered_projects = site.projects | where_exp: "project", "project.lead == page.short_name" | concat: fellows_projects %}
+            {% assign filtered_projects = site.projects | where_exp: "project", "project.supervisor == page.short_name" | concat: fellows_projects %}
             {% for project in filtered_projects %}
               <li>
                 <a href="{{ project.url | remove: ".html" }}">{{ project.title }}</a>

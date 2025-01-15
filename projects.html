@@ -25,15 +25,15 @@ title: Projects
           {% if fellow != nil %}
             <span class="fs-5">
               Fellow:
-              <a href="{{ fellow.url }}">{{ fellow.name }}</a>
+              <a href="{{ fellow.url | remove: ".html" }}">{{ fellow.name }}</a>
             </span>
             <br>
           {% endif %}
           <span class="fs-5">Supervisor:
-            <a href="{{ supervisor.url }}">{{ supervisor.name }} ({{ supervisor.city }})</a>
+            <a href="{{ supervisor.url | remove: ".html" }}">{{ supervisor.name }} ({{ supervisor.city }})</a>
             Co-supervisors:
-            <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }}</a>,
-            <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a>
+            <a href="{{ cosupervisor1.url | remove: ".html" }}">{{ cosupervisor1.name }}</a>,
+            <a href="{{ cosupervisor2.url | remove: ".html" }}">{{ cosupervisor2.name }}</a>
           </span>
           <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">
             <div class="card card-body">
