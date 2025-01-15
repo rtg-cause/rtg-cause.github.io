@@ -3,36 +3,54 @@ layout: default
 ---
 
 <div class="container">
-{% include breadcrumb_projects.html project_number=page.id %}
+  {% include breadcrumb_projects.html project_number=page.id %}
 </div>
 
 <div class="container py-4">
-<h1>{{ page.title }}</h1>
+  <h1>{{ page.title }}</h1>
 
-<div class="row align-items-start gx-5">
-    <div class="col-md-auto me-5">
-        {% assign lead = site.pis | where: 'short_name', page.lead | first %}
-        <p class="view"> Lead-Supervisor:
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="{{ lead.url }}">{{ lead.name }}</a><br> 
-                    {{ lead.institution }}
-                </li>
-            </ul>
+  {% assign fellow = site.people | where_exp: "item", "item.short_name == page.fellow" | first %}
+  {% if fellow != nil %}
+    <div class="row align-items-start gx-5">
+      <div class="col-md-auto me-5">
+        <p class="view">
+          Fellow:
+          <a href="{{ fellow.url }}">{{ fellow.name }}</a>
         </p>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="row align-items-start gx-5">
+    <div class="col-md-auto me-5">
+      {% assign supervisor = site.pis | where: 'short_name', page.supervisor | first %}
+      <p class="view">
+        Supervisor:
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="{{ supervisor.url }}">{{ supervisor.name }}</a><br>
+            {{ supervisor.institution }}
+          </li>
+        </ul>
+      </p>
     </div>
     <div class="col-md-auto">
-        <p class="view"> Co-Supervisors:
+      <p class="view">
+        Co-Supervisors:
         <ul class="list-inline">
-            {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
-            {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
-            <li class="list-inline-item"><a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }},</a></li>
-            <li class="list-inline-item"><a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a></li>
+          {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
+          {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
+          <li class="list-inline-item">
+            <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }},</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a>
+          </li>
         </ul>
-        </p>
+      </p>
     </div>
-</div>
+  </div>
 
-{{content}}
+  {{ content }}
 
 </div>

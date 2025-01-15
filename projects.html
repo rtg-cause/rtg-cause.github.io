@@ -8,29 +8,40 @@ title: Projects
 
 <div class="row mx-3 g-3">
 
-<ul>
-  {% assign projects_sorted = site.projects | sort: "path" %}
-  {% for project in projects_sorted %}
-    <li>
-      {% assign lead = site.pis | where: 'short_name', project.lead | first %}
-      {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
-      {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
-      <p>
-      <a href="{{ project.url }}">
-        <span class="fs-4">Project {{ project.id | split: "/" | last }}:</span>
-        <span class="fs-4">{{ project.title }}</span>
-      </a>
-      <br>
-      <span class="fs-5">Lead-supervisor: <a href="{{ lead.url }}">{{ lead.name }} ({{ lead.city }})</a> 
-                         Co-supervisors: <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }}</a>,
-                                        <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a></span>  
-      <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">
-        <div class="card card-body">
-          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-        </div>
-      </div>
-      </p>
-    </li>
-  {% endfor %}
-</ul>
+  <ul>
+    {% assign projects_sorted = site.projects | sort: "path" %}
+    {% for project in projects_sorted %}
+      <li>
+        {% assign supervisor = site.pis | where: 'short_name', project.supervisor | first %}
+        {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
+        {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
+        {% assign fellow = site.people | where_exp: "item", "item.short_name == project.fellow" | first %}
+        <p>
+          <a href="{{ project.url }}">
+            <span class="fs-4">Project {{ project.id | split: "/" | last }}:</span>
+            <span class="fs-4">{{ project.title }}</span>
+          </a>
+          <br>
+          {% if fellow != nil %}
+            <span class="fs-5">
+              Fellow:
+              <a href="{{ fellow.url }}">{{ fellow.name }}</a>
+            </span>
+            <br>
+          {% endif %}
+          <span class="fs-5">Supervisor:
+            <a href="{{ supervisor.url }}">{{ supervisor.name }} ({{ supervisor.city }})</a>
+            Co-supervisors:
+            <a href="{{ cosupervisor1.url }}">{{ cosupervisor1.name }}</a>,
+            <a href="{{ cosupervisor2.url }}">{{ cosupervisor2.name }}</a>
+          </span>
+          <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">
+            <div class="card card-body">
+              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+            </div>
+          </div>
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
