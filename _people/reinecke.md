@@ -1,6 +1,6 @@
 ---
 short_name: reinecke
 name: Anton Reinecke
-role: associate
+role: draft
 ---
 
