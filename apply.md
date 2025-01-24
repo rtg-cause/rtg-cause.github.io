@@ -6,10 +6,48 @@ title: Apply
   {% include breadcrumb.html current_page=page.title %}
 </div>
 
-# 8 Doctoral Researchers / Research Associate (m/f/d) on Self-Explaining Digitally Controlled Systems
+<div class="row mx-3 g-3">
+  <h2> 8 Doctoral Researchers / Research Associate (m/f/d) on Self-Explaining Digitally Controlled Systems </h2>
 
-Our first cohort of doctoral researchers starts in November 2024. The call for applications is closed.
+  <p>
+  The following list outlines the projects to be advertised for the second cohort of doctoral researchers, scheduled to commence in November 2025. The call for applications is expected to open in May 2025.
+  </p>
 
-The second cohort of doctoral researchers will start in November 2025. The call for applications is expected to open around May 2025.
-
-
+  <ul>
+    {% assign projects_sorted = site.projects | sort: "path" | where_exp: "item",
+ "item.draft == true" %}
+    {% for project in projects_sorted %}
+      <li>
+        {% assign supervisor = site.pis | where: 'short_name', project.supervisor | first %}
+        {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
+        {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
+        {% assign fellow = site.people | where_exp: "item", "item.short_name == project.fellow" | first %}
+        <p>
+          <a href="{{ project.url | remove: ".html" }}">
+            <span class="fs-4">Project {{ project.id | split: "/" | last }}:</span>
+            <span class="fs-4">{{ project.title }}</span>
+          </a>
+          <br>
+          {% if fellow != nil %}
+            <span class="fs-5">
+              Fellow:
+              <a href="{{ fellow.url | remove: ".html" }}">{{ fellow.name }}</a>
+            </span>
+            <br>
+          {% endif %}
+          <span class="fs-5">Supervisor:
+            <a href="{{ supervisor.url | remove: ".html" }}">{{ supervisor.name }} ({{ supervisor.city }})</a>
+            Co-supervisors:
+            <a href="{{ cosupervisor1.url | remove: ".html" }}">{{ cosupervisor1.name }}</a>,
+            <a href="{{ cosupervisor2.url | remove: ".html" }}">{{ cosupervisor2.name }}</a>
+          </span>
+          <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">
+            <div class="card card-body">
+              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+            </div>
+          </div>
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

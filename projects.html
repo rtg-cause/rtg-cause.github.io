@@ -9,7 +9,8 @@ title: Projects
 <div class="row mx-3 g-3">
 
   <ul>
-    {% assign projects_sorted = site.projects | sort: "path" %}
+    {% assign projects_sorted = site.projects | sort: "path" | where_exp: "item",
+ "item.draft != true" %}
     {% for project in projects_sorted %}
       <li>
         {% assign supervisor = site.pis | where: 'short_name', project.supervisor | first %}
