@@ -37,9 +37,10 @@ title: Apply
           {% endif %}
           <span class="fs-5">Supervisor:
             <a href="{{ supervisor.url | remove: ".html" }}">{{ supervisor.name }} ({{ supervisor.city }})</a>
-            Co-supervisors:
+            <!-- Co-supervisors:
             <a href="{{ cosupervisor1.url | remove: ".html" }}">{{ cosupervisor1.name }}</a>,
             <a href="{{ cosupervisor2.url | remove: ".html" }}">{{ cosupervisor2.name }}</a>
+            --!>
           </span>
           <div class="collapse" id="projectCollapse{{ project.id | split: "/" | last }}">
             <div class="card card-body">
