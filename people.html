@@ -60,6 +60,33 @@ title: People
 
 </div>
 
+<h1 class="display-3 text-center pb-3">Associate Researchers</h1>
+<div class="grid m-3 g-3">
+
+  {% for person in site.people %}
+    {% if person.role == "researcher" %}
+      <div class="g-col-12 g-col-md-6 g-col-lg-4 g-col-xxl-3">
+        <div class="card">
+          {% assign portrait = site.static_files | where: "basename", person.short_name | where: "extname", ".webp" | first %}
+          {% if portrait == nil %}
+            {% assign portrait = site.static_files | where: "basename", "person" | where: "extname", ".webp" | first %}
+          {% endif %}
+          <img
+            class="img-fluid bg-secondary bg-gradient"
+            src="{{ portrait.path }}"
+            alt="Portrait {{ person.name }}" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="stretched-link" href="{{ person.url  | remove: ".html" }}">{{ person.name }}</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</div>
+
 <h1 class="display-3 text-center pb-3">Supervisors</h1>
 <div class="grid m-3 g-3">
 
