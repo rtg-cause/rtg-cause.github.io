@@ -34,21 +34,23 @@ layout: default
         </ul>
       </p>
     </div>
-    <div class="col-md-auto">
-      <p class="view">
-        Co-Supervisors:
-        <ul class="list-inline">
-          {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
-          {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
-          <li class="list-inline-item">
-            <a href="{{ cosupervisor1.url | remove: ".html" }}">{{ cosupervisor1.name }},</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="{{ cosupervisor2.url | remove: ".html" }}">{{ cosupervisor2.name }}</a>
-          </li>
-        </ul>
-      </p>
-    </div>
+    {% if page.draft == false %}
+      <div class="col-md-auto">
+        <p class="view">
+          Co-Supervisors:
+          <ul class="list-inline">
+            {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
+            {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
+            <li class="list-inline-item">
+              <a href="{{ cosupervisor1.url | remove: ".html" }}">{{ cosupervisor1.name }},</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{{ cosupervisor2.url | remove: ".html" }}">{{ cosupervisor2.name }}</a>
+            </li>
+          </ul>
+        </p>
+      </div>
+    {% endif %}
   </div>
 
   {{ content }}
