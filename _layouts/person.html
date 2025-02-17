@@ -48,7 +48,7 @@ layout: default
             {% assign filtered_projects = site.projects | where_exp: "project", "project.supervisor == page.short_name" | concat: fellows_projects %}
             {% for project in filtered_projects %}
               <li>
-                <a href="{{ project.url | remove: ".html" }}">{{ project.title }}</a>
+                <a href="{{ project.url | remove: ".html" }}">P{{ project.slug }} - {{ project.title }}</a>
               </li>
             {% endfor %}
           </ul>
