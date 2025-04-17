@@ -1,6 +1,7 @@
 ---
 short_name: reinecke
 name: Anton Reinecke
-role: draft
+link: https://www.tuhh.de/sts/institute/people/rainer-marrone-1
+role: associate
 ---
 
