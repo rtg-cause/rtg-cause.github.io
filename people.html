@@ -146,7 +146,7 @@ title: People
             {% assign portrait = site.static_files | where: "basename", "person" | where: "extname", ".webp" | first %}
           {% endif %}
           <img
-            class="img-fluid"
+            class="img-fluid bg-secondary bg-gradient"
             src="{{ portrait.path }}"
             alt="Portrait {{ person.name }}" />
           <div class="card-body">
