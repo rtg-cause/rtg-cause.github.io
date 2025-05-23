@@ -1,6 +1,6 @@
 ---
 short_name: kowalewski
-name: Prof. Dr.-Ing. Stefan Kowalewski
+name: Prof. Stefan Kowalewski
 link: https://www.embedded.rwth-aachen.de/go/id/bfjyva/
 role: advisor
 ---
