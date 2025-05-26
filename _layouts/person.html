@@ -44,9 +44,19 @@ layout: default
             <h4 class="text-right">Projects</h4>
           </div>
           <ul>
-            {% assign fellows_projects = site.projects | where_exp: "project", "project.fellow == page.short_name" %}
-            {% assign filtered_projects = site.projects | where_exp: "project", "project.supervisor == page.short_name" | concat: fellows_projects %}
-            {% for project in filtered_projects %}
+            {% assign related_projects = "" | split: "" %}
+            {% for project in site.projects %}
+              {% assign is_fellow = false %}
+              {% if project.fellow %}
+                {% if project.fellow contains page.short_name %}
+                  {% assign is_fellow = true %}
+                {% endif %}
+              {% endif %}
+              {% if is_fellow or project.supervisor == page.short_name %}
+                {% assign related_projects = related_projects | push: project %}
+              {% endif %}
+            {% endfor %}
+            {% for project in related_projects %}
               <li>
                 <a href="{{ project.url | remove: ".html" }}">P{{ project.slug }} - {{ project.title }}</a>
               </li>
@@ -56,4 +66,4 @@ layout: default
       {% endif %}
     </div>
   </div>
-</div></div></div>
+</div>
