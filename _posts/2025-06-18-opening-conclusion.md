@@ -17,3 +17,5 @@ The morning keynotes set the tone for the day’s technical depth. Prof. Erika A
 Subsequent presentations showcased current research directions within CAUSE. Talks ranged from foundational challenges in cyber-physical systems (Prof. Heiko Falk), receiver-specific explanation models (Prof. Verena Klös), and algorithmic decision procedures (Moritz Buhr), to executable explanations (Ulrike Engeln). Contributions by Ivo David Oliveira and Caroline Dominik illustrated how context-sensitive self-explanation can be integrated into adaptive software and virtual prototyping.
 
 In the concluding poster session, all CAUSE doctoral researchers presented their projects, highlighting the thematic diversity and ongoing interdisciplinary collaborations. The session provided space for in-depth technical discussion and initiated many cross-location conversations that will shape the future development of the program.
+
+<img src="\assets\img\20250613_group_photo.webp" class="img-fluid" alt="Group photo">
