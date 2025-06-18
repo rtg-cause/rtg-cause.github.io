@@ -12,9 +12,9 @@ title: Projects
     {% assign projects_sorted = site.projects | sort: "path" | where_exp: "item", "item.draft != true" %}
     {% for project in projects_sorted %}
       <li>
-        {% assign supervisor = site.pis | where: 'short_name', project.supervisor | first %}
-        {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
-        {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
+        {% assign supervisor = site.people | where: 'short_name', project.supervisor | first %}
+        {% assign cosupervisor1 = site.people | where: 'short_name', project.cosupervisor1 | first %}
+        {% assign cosupervisor2 = site.people | where: 'short_name', project.cosupervisor2 | first %}
 
         {%- assign fellows = "" | split: "" -%}
         {%- for fellow_name in project.fellow -%}

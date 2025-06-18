@@ -19,9 +19,9 @@ title: Apply
  "item.draft == true" %}
     {% for project in projects_sorted %}
       <li>
-        {% assign supervisor = site.pis | where: 'short_name', project.supervisor | first %}
-        {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
-        {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
+        {% assign supervisor = site.people | where: 'short_name', project.supervisor | first %}
+        {% assign cosupervisor1 = site.people | where: 'short_name', project.cosupervisor1 | first %}
+        {% assign cosupervisor2 = site.people | where: 'short_name', project.cosupervisor2 | first %}
         {% assign fellow = site.people | where_exp: "item", "item.short_name == project.fellow" | first %}
         <p>
           <a href="{{ project.url | remove: ".html" }}">
