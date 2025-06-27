@@ -1,6 +1,6 @@
 ---
 short_name: hammer
-name: Prof. Dr. Barbara Hammer
+name: Prof. Barbara Hammer
 link: https://www.techfak.uni-bielefeld.de/~bhammer/
 role: advisor
 ---

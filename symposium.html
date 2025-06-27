@@ -3,22 +3,21 @@ title: Symposium
 ---
 
 <div class="container">
-  {% include breadcrumb.html current_page=page.title %}
+    {% include breadcrumb.html current_page=page.title %}
 </div>
 
 
 <!-- Hero Section -->
 <header class="hero-section">
     <div class="container text-center">
-        <h1 class="display-4 fw-bold mb-3">CAUSE Graduate School Opening Symposium</h1>
-        <p class="lead mb-4">Concepts and Algorithms for – and Usage of – Self-Explaining Digitally Controlled Systems</p>
+        <h1 class="display-4 fw-bold mb-3">CAUSE Opening Symposium</h1>
+        <p class="lead mb-4">Concepts and Algorithms for – and Usage of – Self-Explaining Digitally Controlled Systems
+        </p>
         <div class="d-flex justify-content-center gap-3 flex-wrap">
             <div class="d-flex align-items-center">
-                <i class="bi bi-calendar-event me-2"></i>
                 <span>June 13, 2025</span>
             </div>
             <div class="d-flex align-items-center">
-                <i class="bi bi-geo-alt me-2"></i>
                 <span>Ditze Hörsaal (H016), TUHH</span>
             </div>
         </div>
@@ -29,96 +28,233 @@ title: Symposium
 <!-- Program Section -->
 <section id="program">
     <div class="container py-5">
-        <h2 class="text-center mb-5">Symposium Program</h2>
+        <h2 class="text-center mb-4">Symposium Program</h2>
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="alert alert-info mt-4">
-                    <i class="bi bi-info-circle me-2"></i> The program is subject to change. Final details will be communicated to registered participants.
-                </div>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <h5>9:00 AM - 9:30 AM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Welcome and Introduction</h6>
-                                <p class="card-text">Opening remarks by Prof. Goerschwin Fey, CAUSE Speaker</p>
+                                <h6 class="card-title">9:00 &mdash; Welcome</h6>
+                                <p class="card-text mt-1 fs-6">
+                                    {% assign person = site.people | where: "short_name", "timm-giel" | first %}
+                                    <a href="https://www.tuhh.de/tuhh/tu-hamburg/struktur/praesidium">{{ person.name
+                                        }}</a>, President of Hamburg University of Technology<br>
+                                    {% assign person = site.people | where: "short_name", "fey" | first %}
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (Hamburg University of Technology), CAUSE Speaker
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>9:30 AM - 10:00 AM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Address by TUHH President</h6>
-                                <p class="card-text">Prof. Andreas Timm-Giel, President of Hamburg University of Technology</p>
+                                <h6 class="card-title">9:10 &mdash; Introduction to CAUSE</h6>
+                                {% assign person = site.people | where: "short_name", "fraenzle" | first %}
+                                <p class="card-text mt-1 fs-6">
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (Carl von Ossietzky University of Oldenburg), CAUSE Co-Speaker
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>10:00 AM - 11:00 AM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card text-bg-light border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Keynote Presentation</h6>
-                                <p class="card-text">To be announced</p>
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-9">
+                                        <h6 class="card-title">9:30 &mdash; Keynote talk: Formal Methods for
+                                            Self-Explaining
+                                            Digital
+                                            Control</h6>
+                                        {% assign person = site.people | where: "short_name", "abraham" | first %}
+                                        <p class="card-text mt-1 fs-6">
+                                            <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                            (RWTH Aachen University)<br>
+                                            {% assign person = site.people | where: "short_name", "koschke" | first %}
+                                            Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                                }}</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-3">
+                                        {% assign portrait = site.static_files | where: "basename", "abraham" |
+                                        where: "extname", ".webp" | first %}
+                                        {% if portrait == nil %}
+                                        {% assign portrait = site.static_files | where: "basename", "person" | where:
+                                        "extname", ".webp" | first %}
+                                        {% endif %}
+                                        <img src="{{ portrait.path }}" class="w-75 float-end">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>11:00 AM - 11:30 AM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card text-bg-light border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Coffee Break</h6>
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-9">
+                                        <h6 class="card-title">10:20 &mdash; Keynote talk: Potentieller Nutzen
+                                            selbsterklärender Systeme in
+                                            der
+                                            Entwicklung von Medizinprodukten</h6>
+                                        {% assign person = site.people | where: "short_name", "sommer" | first %}
+                                        <p class="card-text mt-1 fs-6">
+                                            <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                            (WEINMANN Emergency Medical Technology)<br>
+                                            {% assign person = site.people | where: "short_name", "schupp" | first %}
+                                            Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                                }}</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-3">
+                                        {% assign portrait = site.static_files | where: "basename", "sommer" |
+                                        where: "extname", ".webp" | first %}
+                                        {% if portrait == nil %}
+                                        {% assign portrait = site.static_files | where: "basename", "person" | where:
+                                        "extname", ".webp" | first %}
+                                        {% endif %}
+                                        <img src="{{ portrait.path }}" class="w-75 float-end">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>11:30 AM - 12:30 PM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">CAUSE Fellows Presentations</h6>
-                                <p class="card-text">Research highlights from CAUSE doctoral researchers</p>
+                                <h6>11:05 &mdash; Coffee Break</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>12:30 PM - 1:30 PM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Lunch Break</h6>
+                                <h6 class="card-title">11:30 &mdash; Challenges Towards Self-Explaining Cyber-Physical
+                                    Systems
+                                </h6>
+                                {% assign person = site.people | where: "short_name", "falk" | first %}
+                                <p class="card-text mt-1 fs-6">
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (Hamburg University of Technology)
+                                    <br>
+                                    {% assign person = site.people | where: "short_name", "martino" | first %}
+                                    Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                        }}</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>1:30 PM - 3:00 PM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Research Talks</h6>
-                                <p class="card-text">Presentations on self-explaining systems</p>
+                                <h6 class="card-title">11:50 &mdash; Why Should Explanations for Cyber-Physical Systems
+                                    Be
+                                    Context- and Recipient-Specific?</h6>
+                                {% assign person = site.people | where: "short_name", "kloes" | first %}
+                                <p class="card-text mt-1 fs-6">
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (Carl von Ossietzky University of Oldenburg)
+                                    <br>
+                                    {% assign person = site.people | where: "short_name", "berger" | first %}
+                                    Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                        }}</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>3:00 PM - 3:30 PM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Coffee Break</h6>
+                                <h6 class="card-title">12:10 &mdash; Decision Procedures for Feasibility of Locally
+                                    Informed
+                                    Explanation</h6>
+                                {% assign person = site.people | where: "short_name", "buhr" | first %}
+                                <p class="card-text mt-1 fs-6">
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (Carl von Ossietzky University of Oldenburg)
+                                    <br>
+                                    {% assign person = site.people | where: "short_name", "wehrheim" | first %}
+                                    Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                        }}</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>3:30 PM - 4:30 PM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Poster Session</h6>
-                                <p class="card-text">Showcase of current CAUSE projects and research</p>
+                                <h6 class="card-title">12:25 &mdash; Executable Explanations of Control Software</h6>
+                                {% assign person = site.people | where: "short_name", "engeln" | first %}
+                                <p class="card-text mt-1 fs-6">
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (Hamburg University of Technology)
+                                    <br>
+                                    {% assign person = site.people | where: "short_name", "wehrheim" | first %}
+                                    Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                        }}</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <h5>4:30 PM - 5:00 PM</h5>
-                        <div class="card">
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
                             <div class="card-body">
-                                <h6 class="card-title">Closing Remarks and Networking</h6>
+                                <h6 class="card-title">12:40 &mdash; Self-Explaining Adaptive Software</h6>
+                                {% assign person = site.people | where: "short_name", "david" | first %}
+                                <p class="card-text mt-1 fs-6">
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (Carl von Ossietzky University of Oldenburg)
+                                    <br>
+                                    {% assign person = site.people | where: "short_name", "wehrheim" | first %}
+                                    Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                        }}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
+                            <div class="card-body">
+                                <h6 class="card-title">12:55 &mdash; Explanations in a Virtual Prototype based Design
+                                    Flow
+                                </h6>
+                                {% assign person = site.people | where: "short_name", "dominik" | first %}
+                                <p class="card-text mt-1 fs-6">
+                                    <a href="{{ person.url | remove: ".html" }}">{{ person.name }}</a>
+                                    (University of Bremen)
+                                    <br>
+                                    {% assign person = site.people | where: "short_name", "wehrheim" | first %}
+                                    Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                        }}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
+                            <div class="card-body">
+                                <h6 class="card-title">13:10 &mdash; Poster Session</h6>
+                                <p class="card-text mt-1 fs-6">
+                                    {% assign person = site.people | where: "short_name", "drechsler" | first %}
+                                    Session chair: <a href="{{ person.url | remove: ".html" }}">{{ person.name
+                                        }}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item pt-2">
+                        <div class="card border-bottom-0 border-end-0 border-start-0 rounded-0">
+                            <div class="card-body">
+                                <h6 class="card-title">Catering</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item pt-2">
+                        <div class="card border-end-0 border-start-0 rounded-0">
+                            <div class="card-body">
+                                <h6 class="card-title">14:50 &mdash; Closing Remarks</h6>
                             </div>
                         </div>
                     </div>
@@ -133,46 +269,65 @@ title: Symposium
     <div class="container">
         <h2 class="text-center mb-5">Venue Information</h2>
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0 mx-auto">
+            <div class="col-lg-8 mb-4 mb-lg-0 mx-auto">
                 <div class="card border-0 shadow h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Ditze Hörsaal (Room H016)</h5>
-                        <p class="card-text">Hamburg University of Technology (TUHH)</p>
-                        <address>
-                            <i class="bi bi-geo-alt me-2"></i> Am Schwarzenberg-Campus 3<br>
+                        <h5 class="card-title">Hamburg University of Technology (TUHH)</h5>
+                        <p class="card-text">
+                            Ditze Hörsaal (Room H016)<br>
+                            Am Schwarzenberg-Campus 3<br>
                             21073 Hamburg, Germany
-                        </address>
+                        </p>
+                        <p>
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#mapsCollapse" role="button"
+                                aria-expanded="false" aria-controls="mapsCollapse">
+                                Show map
+                            </a>
+                        </p>
+                        <div class="collapse" id="mapsCollapse">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2375.343549959021!2d9.969562999999999!3d53.462320000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTPCsDI3JzQ0LjQiTiA5wrA1OCcxMC40IkU!5e0!3m2!1sde!2sde!4v1749112440411!5m2!1sde!2sde"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                         <hr>
-                        <h6>Getting There</h6>
+                        <h5>Getting There</h5>
                         <div class="mb-2">
-                            <i class="bi bi-train me-2"></i> <strong>Public Transport:</strong> S-Bahn to Heimfeld
+                            <strong>Public Transport:</strong>
+                            S-Bahn stop
+                            <em>Heimfeld</em>
                         </div>
                         <div>
-                            <i class="bi bi-car-front me-2"></i> <strong>Parking:</strong> Limited parking available on campus
+                            <strong>Parking:</strong>
+                            Limited parking available on campus.<br>
+                            <a href="https://maps.app.goo.gl/wA1hLNvT6z4eJfCSA">Google Maps link to parking garage.</a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- <div class="col-lg-6">
-                <div class="ratio ratio-16x9 shadow">
-                    <img src="/api/placeholder/600/400" alt="Map of TUHH Campus" class="img-fluid rounded" />
-                </div>
-            </div> -->
+<div class="ratio ratio-16x9 shadow">
+            <img src="/api/placeholder/600/400" alt="Map of TUHH Campus" class="img-fluid rounded" />
+        </div>
+    </div> -->
         </div>
     </div>
 </section>
 
 <!-- Registration Section -->
-<section id="registration" class="section section-alt">
+<section id="registration" class="section section-alt pt-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
                 <h2 class="mb-4">Registration</h2>
                 <p class="lead mb-4">Attendance is free of charge, but registration is required.</p>
                 <div class="card border-0 shadow mb-4">
-                    <div class="card-body py-5">
-                        <h5 class="mb-4">Registration will open soon</h5>
-                        <p>Please check back later for registration details or sign up for notifications.</p>
+                    <div class="card-body py-2">
+                        <h5 class="mt-4">Registration is now open!</h5>
+                        <p>
+                            <a class="btn btn-primary" href="https://intranet.tuhh.de/anmeldung/cause_opensym">Register
+                                here</a>
+                        </p>
                     </div>
                 </div>
                 <p class="mb-0">For more information about the symposium, please contact the event organizers.</p>
@@ -182,21 +337,18 @@ title: Symposium
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="section py-4">
+<section id="contact" class="section pt-5">
     <div class="container">
         <h2 class="text-center mb-5">Contact Information</h2>
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 border-0 shadow contact-card">
                     <div class="card-body text-center">
-                        <div class="mb-3">
-                            <i class="bi bi-person-circle fs-1 text-primary"></i>
-                        </div>
                         <h5 class="card-title">Dr. Gianluca Martino</h5>
                         <p class="card-text">Event Coordinator</p>
                         <hr>
-                        <a href="mailto:gianluca.martino@tuhh.de" class="btn btn-outline-primary">
-                            <i class="bi bi-envelope me-2"></i>gianluca.martino@tuhh.de
+                        <a href="mailto:{{ 'gianluca.martino@tuhh.de' | encode_email }}" class="btn btn-outline-primary">
+                            <i class="bi bi-envelope me-2"></i>gianluca&period;martino[at]tuhh&period;de
                         </a>
                     </div>
                 </div>
@@ -204,14 +356,11 @@ title: Symposium
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 border-0 shadow contact-card">
                     <div class="card-body text-center">
-                        <div class="mb-3">
-                            <i class="bi bi-person-circle fs-1 text-primary"></i>
-                        </div>
-                        <h5 class="card-title">Elke Nissen</h5>
+                        <h5 class="card-title">CAUSE Office</h5>
                         <p class="card-text">Administrative Contact</p>
                         <hr>
-                        <a href="mailto:sekr-es@tuhh.de" class="btn btn-outline-primary">
-                            <i class="bi bi-envelope me-2"></i>sekr-es@tuhh.de
+                        <a href="mailto: {{ 'grk-cause-office@tuhh.de' | encode_email }}" class="btn btn-outline-primary">
+                            <i class="bi bi-envelope me-2"></i>grk-cause-office[at]tuhh&period;de
                         </a>
                     </div>
                 </div>

@@ -9,13 +9,22 @@ layout: default
 <div class="container py-4">
   <h1>{{ page.title }}</h1>
 
-  {% assign fellow = site.people | where_exp: "item", "item.short_name == page.fellow" | first %}
-  {% if fellow != nil %}
+  {% assign fellows = "" | split: "" %}
+  {% for name in page.fellow %}
+    {% assign matched = site.people | where: "short_name", name | first %}
+    {% if matched %}
+      {% assign fellows = fellows | push: matched %}
+    {% endif %}
+  {% endfor %}
+
+  {% if fellows.size > 0 %}
     <div class="row align-items-start gx-5">
       <div class="col-md-auto me-5">
         <p class="view">
-          Fellow:
-          <a href="{{ fellow.url | remove: ".html" }}">{{ fellow.name }}</a>
+          Fellow{% if fellows.size > 1 %}s{% endif %}:
+          {% for fellow in fellows %}
+            <a href="{{ fellow.url | remove: ".html" }}">{{ fellow.name }}</a>{% if forloop.last == false %}, {% endif %}
+          {% endfor %}
         </p>
       </div>
     </div>

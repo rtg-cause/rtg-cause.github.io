@@ -9,24 +9,33 @@ title: Projects
 <div class="row mx-3 g-3">
 
   <ul>
-    {% assign projects_sorted = site.projects | sort: "path" | where_exp: "item",
- "item.draft != true" %}
+    {% assign projects_sorted = site.projects | sort: "path" | where_exp: "item", "item.draft != true" %}
     {% for project in projects_sorted %}
       <li>
-        {% assign supervisor = site.pis | where: 'short_name', project.supervisor | first %}
-        {% assign cosupervisor1 = site.pis | where: 'short_name', project.cosupervisor1 | first %}
-        {% assign cosupervisor2 = site.pis | where: 'short_name', project.cosupervisor2 | first %}
-        {% assign fellow = site.people | where_exp: "item", "item.short_name == project.fellow" | first %}
+        {% assign supervisor = site.people | where: 'short_name', project.supervisor | first %}
+        {% assign cosupervisor1 = site.people | where: 'short_name', project.cosupervisor1 | first %}
+        {% assign cosupervisor2 = site.people | where: 'short_name', project.cosupervisor2 | first %}
+
+        {%- assign fellows = "" | split: "" -%}
+        {%- for fellow_name in project.fellow -%}
+          {%- assign matched_fellow = site.people | where: "short_name", fellow_name | first -%}
+          {%- if matched_fellow -%}
+            {%- assign fellows = fellows | push: matched_fellow -%}
+          {%- endif -%}
+        {%- endfor -%}
+
         <p>
           <a href="{{ project.url | remove: ".html" }}">
             <span class="fs-4">Project {{ project.id | split: "/" | last }}:</span>
             <span class="fs-4">{{ project.title }}</span>
           </a>
           <br>
-          {% if fellow != nil %}
+          {% if fellows.size > 0 %}
             <span class="fs-5">
-              Fellow:
-              <a href="{{ fellow.url | remove: ".html" }}">{{ fellow.name }}</a>
+              Fellow{% if fellows.size > 1 %}s{% endif %}:
+              {% for fellow in fellows %}
+                <a href="{{ fellow.url | remove: ".html" }}">{{ fellow.name }}</a>{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
             </span>
             <br>
           {% endif %}
