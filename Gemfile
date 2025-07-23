@@ -2,13 +2,14 @@
 
 source "https://rubygems.org"
 
-gem "github-pages", "~> 231"
+gem "jekyll"
+gem "github-pages", "~> 232"
 gem "webrick", "~> 1.8"
-gem "bootstrap", "~> 5.3"
-gem "wdm", "~> 0.1.1"
-gem "jekyll-email-protect"
+gem "wdm", ">= 0.1.0" if Gem.win_platform?
+gem "fiddle"
 
 group :jekyll_plugins do
     gem "jekyll-sitemap"
     gem "jekyll-seo-tag"
+    gem "jekyll-scholar"
 end

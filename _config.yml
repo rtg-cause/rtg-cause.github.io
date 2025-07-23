@@ -1,10 +1,6 @@
 collections:
   people:
     output: true
-  pis:
-    output: true
-  researchers:
-    output: true
   projects:
     output: true
 
@@ -12,11 +8,6 @@ defaults:
   - scope:
       path: ""
       type: "people"
-    values:
-      layout: "person"
-  - scope:
-      path: ""
-      type: "pis"
     values:
       layout: "person"
   - scope:
@@ -38,7 +29,9 @@ defaults:
     values:
       layout: "default"
 
+sass:
+  style: compressed
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-email-protect

@@ -32,7 +32,7 @@ layout: default
 
   <div class="row align-items-start gx-5">
     <div class="col-md-auto me-5">
-      {% assign supervisor = site.pis | where: 'short_name', page.supervisor | first %}
+      {% assign supervisor = site.people | where: 'short_name', page.supervisor | first %}
       <p class="view">
         Supervisor:
         <ul class="list-inline">
@@ -48,8 +48,8 @@ layout: default
         <p class="view">
           Co-Supervisors:
           <ul class="list-inline">
-            {% assign cosupervisor1 = site.pis | where: 'short_name', page.cosupervisor1 | first %}
-            {% assign cosupervisor2 = site.pis | where: 'short_name', page.cosupervisor2 | first %}
+            {% assign cosupervisor1 = site.people | where: 'short_name', page.cosupervisor1 | first %}
+            {% assign cosupervisor2 = site.people | where: 'short_name', page.cosupervisor2 | first %}
             <li class="list-inline-item">
               <a href="{{ cosupervisor1.url | remove: ".html" }}">{{ cosupervisor1.name }},</a>
             </li>
