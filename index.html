@@ -25,7 +25,7 @@
                         <h5 class="post-title">{{ post.title }}</h5>
                     </a>
                     <small>{{ post.date | date: "%-d %B %Y" }}</small>
-                    <h6 class="post-subtitle">{{ post.excerpt }}</h6>
+                    <h6 class="post-subtitle">{{ post.content | truncatewords: 50 }}</h6>
                     {% assign author = site.pis | concat: site.people | where: 'short_name', post.author | first %}
                     {% if author %}
                     <p class="post-meta">
@@ -48,7 +48,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col align-self-center text-center">
-            {% assign map = site.static_files | where:"basename", CAUSE_Norddeutschland | where:"extname", ".png" | first %}
+            {% assign map = site.static_files | where:"basename", "CAUSE_Norddeutschland" | where:"extname", ".png" | first %}
             <img src="{{ map.path }}" class="mx-auto " alt="Map of North Germany">
         </div>
     </div>
