@@ -1,3 +1,5 @@
+repository: rtg-cause/rtg-cause.github.io
+
 collections:
   people:
     output: true
