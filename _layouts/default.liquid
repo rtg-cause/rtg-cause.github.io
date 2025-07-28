@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    >
+    <!-- Font Awesome icons (free version) -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link
+      defer
+      rel="stylesheet"
+      href="{{ '/assets/css/jekyll-pygments-themes-github.css' | relative_url | bust_file_cache }}"
+      media=""
+      id="highlight_theme_light"
+    >
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      {% assign tuhh_logo = site.static_files | where: 'basename', 'TUHH_logo-wortmarke' | first %}
+      {% assign unib_logo = site.static_files | where: 'basename', 'unibremen_big' | first %}
+      {% assign unio_logo = site.static_files | where: 'basename', 'UOL-Logo' | first %}
+      {% assign dfg_logo = site.static_files | where: 'basename', 'dfg_logo_schriftzug_blau_foerderung_en' | first %}
+      <header>
+        <div class="container">
+          {% assign logo = site.static_files | where: 'name', 'Logo_CAUSE_reduziert.svg' | first %}
+          {% include navigation.html logo_url=logo.path tuhh_logo_url=tuhh_logo.path unib_logo_url=unib_logo.path unio_logo_url=unio_logo.path %}
+        </div>
+      </header>
+      <section>
+        <div class="container py-3">
+          {{ content }}
+        </div>
+      </section>
+      {% include footer.html tuhh_logo_url=tuhh_logo.path unib_logo_url=unib_logo.path unio_logo_url=unio_logo.path dfg_logo_url=dfg_logo.path %}
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

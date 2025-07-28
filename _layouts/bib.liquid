@@ -1,0 +1,210 @@
+---
+---
+<div class="container py-2">
+  <div class="row">
+    <!-- Entry bib key -->
+    <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+      <!-- Title -->
+      <div class="title">{{ entry.title }}</div>
+      <!-- Author -->
+      <div class="author">
+        {% assign author_array_size = entry.author_array | size %}
+
+        {% assign author_array_limit = author_array_size %}
+        {% if site.max_author_limit and author_array_size > site.max_author_limit %}
+          {% assign author_array_limit = site.max_author_limit %}
+        {% endif %}
+
+        {%- for author in entry.author_array -%}
+          {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+          {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+
+          {%- if forloop.length > 1 -%}
+            {% if forloop.first == false -%}
+              {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
+            {%- endif %}
+            {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
+          {% endif %}
+
+          {{- author.first }}
+          {{ author_last_html -}}
+        {% endfor %}
+      </div>
+
+      <!-- Journal/Book title and date -->
+      {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
+      {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
+      {% if entry.type == 'article' %}
+        {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% elsif proceedings contains entry.type %}
+        {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
+      {% elsif thesis contains entry.type %}
+        {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
+      {% else %}
+        {% capture entrytype %}{% endcapture %}
+      {% endif %}
+      {% if entry.month %}
+        {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
+      {% endif %}
+      {% if entry.year %}
+        {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
+      {% endif %}
+      {% if entry.location %}
+        {% capture entrytype %}{{ entrytype }}{{ ", " }}{{ entry.location }}{% endcapture %}
+      {% endif -%}
+      {% if entry.additional_info %}
+        {% capture entrytype %}{{ entrytype }}{{ entry.additional_info | markdownify | remove: '<p>' | remove: '</p>' }}{% endcapture %}
+      {% endif %}
+
+      {% assign entrytype_text = entrytype | strip_html | strip %}
+      {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+      <div class="periodical">
+        {{ periodical | strip }}
+      </div>
+      <div class="periodical">
+        {{ entry.note | strip }}
+      </div>
+
+      <!-- Links/Buttons -->
+      <div class="links pt-2">
+        {% if entry.award %}
+          <a
+            class="btn btn-outline-primary"
+            data-bs-toggle="collapse"
+            href="#awardCollapse{{ entry.key }}"
+            role="button"
+            aria-expanded="false"
+            aria-controls="awardCollapse{{ entry.key }}"
+          >
+            {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
+          </a>
+        {% endif %}
+        {% if entry.abstract %}
+          <a
+            class="btn btn-outline-primary"
+            data-bs-toggle="collapse"
+            href="#abstractCollapse{{ entry.key }}"
+            role="button"
+            aria-expanded="false"
+            aria-controls="abstractCollapse{{ entry.key }}"
+            >Abs</a
+          >
+        {% endif %}
+        {% if entry.doi %}
+          <a href="https://doi.org/{{ entry.doi }}" class="btn btn-outline-primary" role="button">DOI</a>
+        {% endif %}
+        {% if entry.arxiv %}
+          <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-outline-primary" role="button">arXiv</a>
+        {% endif %}
+        {% if entry.bibtex_show %}
+          <a
+            class="btn btn-outline-primary"
+            data-bs-toggle="collapse"
+            href="#bibtexCollapse{{ entry.key }}"
+            role="button"
+            aria-expanded="false"
+            aria-controls="bibtexCollapse{{ entry.key }}"
+            >Bib</a
+          >
+        {% endif %}
+        {% if entry.html %}
+          {% if entry.html contains '://' %}
+            <a href="{{ entry.html }}" class="btn btn-outline-primary" role="button">HTML</a>
+          {% else %}
+            <a
+              href="{{ entry.html | prepend: '/assets/html/' | relative_url }}"
+              class="btn btn-outline-primary"
+              role="button"
+              >HTML</a
+            >
+          {% endif %}
+        {% endif %}
+        {% if entry.pdf %}
+          {% if entry.pdf contains '://' %}
+            <a href="{{ entry.pdf }}" class="btn btn-outline-primary" role="button">PDF</a>
+          {% else %}
+            <a
+              href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}"
+              class="btn btn-outline-primary"
+              role="button"
+              >PDF</a
+            >
+          {% endif %}
+        {% endif %}
+        {% if entry.supp %}
+          {% if entry.supp contains '://' %}
+            <a href="{{ entry.supp }}" class="btn btn-outline-primary" role="button">Supp</a>
+          {% else %}
+            <a
+              href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}"
+              class="btn btn-outline-primary"
+              role="button"
+              >Supp</a
+            >
+          {% endif %}
+        {% endif %}
+        {% if entry.video and site.enable_video_embedding %}
+          <a class="abstract btn btn-outline-primary" role="button">Video</a>
+        {% elsif entry.video %}
+          <a href="{{ entry.video }}" class="btn btn-outline-primary" role="button">Video</a>
+        {% endif %}
+        {% if entry.blog %}
+          <a href="{{ entry.blog }}" class="btn btn-outline-primary" role="button">Blog</a>
+        {% endif %}
+        {% if entry.code %}
+          <a href="{{ entry.code }}" class="btn btn-outline-primary" role="button">Code</a>
+        {% endif %}
+        {% if entry.poster %}
+          {% if entry.poster contains '://' %}
+            <a href="{{ entry.poster }}" class="btn btn-outline-primary" role="button">Poster</a>
+          {% else %}
+            <a
+              href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}"
+              class="btn btn-outline-primary"
+              role="button"
+              >Poster</a
+            >
+          {% endif %}
+        {% endif %}
+        {% if entry.slides %}
+          {% if entry.slides contains '://' %}
+            <a href="{{ entry.slides }}" class="btn btn-outline-primary" role="button">Slides</a>
+          {% else %}
+            <a
+              href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}"
+              class="btn btn-outline-primary"
+              role="button"
+              >Slides</a
+            >
+          {% endif %}
+        {% endif %}
+        {% if entry.website %}
+          <a href="{{ entry.website }}" class="btn btn-outline-primary" role="button">Website</a>
+        {% endif %}
+      </div>
+
+      {% if entry.award %}
+        <!-- Hidden Award block -->
+        <div class="award collapse d-print-inline" id="awardCollapse{{ entry.key }}">
+          <p>{{ entry.award | markdownify }}</p>
+        </div>
+      {% endif %}
+
+      {% if entry.abstract %}
+        <!-- Hidden abstract block -->
+        <div class="abstract collapse" id="abstractCollapse{{ entry.key }}">
+          <p>{{ entry.abstract }}</p>
+        </div>
+      {% endif %}
+
+      {% if entry.bibtex_show %}
+        <!-- Hidden bibtex block -->
+        <div class="bibtex collapse" id="bibtexCollapse{{ entry.key }}">
+          {% highlight bibtex %}
+          {{- entry.bibtex | hideCustomBibtex -}}
+          {% endhighlight %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

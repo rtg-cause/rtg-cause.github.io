@@ -3,4 +3,21 @@
 
 $enable-cssgrid: true;
 
+ol.bibliography {
+    margin-left: 1rem;
+}
+
+h2.bibliography {
+    border-top: 1px solid gray;
+    margin-left: initial;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.bibtex, .abstract, .award {
+    margin-top: 1rem;
+}
+
 @import "bootstrap";
