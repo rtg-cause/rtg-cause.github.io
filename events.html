@@ -6,43 +6,38 @@ title: Events
   {% include breadcrumb.html current_page=page.title %}
 </div>
 
-<div class="row mx-3 g-3">
-  <h2>
-    Next Events
-  </h2>
-
-  <div class="accordion" id="accordionNextEvents">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button
-          class="accordion-button"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsNextEvents-collapseOne"
-          aria-expanded="true"
-          aria-controls="panelsNextEvents-collapseOne">
-          CAUSE Opening Symposium
-        </button>
-      </h2>
-      <div id="panelsNextEvents-collapseOne" class="accordion-collapse collapse show">
-        <div class="accordion-body">
-          The Hamburg University of Technology (TUHH) will host the opening symposium on
-          <strong>June 13, 2025</strong>.<br>
-          The event will take place in the Ditze Hörsaal (Room H016) on the TUHH campus.
-          <hr>
-          More information
-          <a href="symposium">here</a>.
-        </div>
+<ul>
+  {% assign sorted_events = site.calendar | sort: "start_date" | reverse %}
+  {% for event in sorted_events %}
+    <li style="margin-bottom: 1.5em;">
+      <h3 style="margin-bottom: 0.2em;">
+      {% if event.eventurl %}
+        <a href="{{ event.eventurl | relative_url }}">{{ event.title }}</a>
+      {% else %}
+        {{ event.title }}
+      {% endif %}
+      </h3>
+      <div>
+        <strong>Date:</strong>
+        {% if event.start_date %}
+          {{ event.start_date | date: "%B %d, %Y" }}
+        {% endif %}
+        {% if event.end_date and event.end_date != event.start_date %}
+          – {{ event.end_date | date: "%B %d, %Y" }}
+        {% endif %}
       </div>
-    </div>
-  </div>
+      {% if event.location %}
+        <div><strong>Location:</strong> {{ event.location }}</div>
+      {% endif %}
+      {% if event.description %}
+        <p>{{ event.description }}</p>
+      {% endif %}
+      {% if event.eventurl %}
+        <p><a href="{{ event.eventurl }}" target="_blank">More info</a></p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
 </div>
 
-<!--
-  <div class="row mx-3 g-3 py-5">
-  <h2>
-    Past Events
-  </h2>
-
-</div>
--->

@@ -5,8 +5,16 @@ collections:
     output: true
   projects:
     output: true
+  calendar:
+    output: true
+    permalink: /calendar/:title/
 
 defaults:
+  - scope:
+      path: ""
+      type: "calendar"
+    values:
+      layout: null
   - scope:
       path: ""
       type: "people"
