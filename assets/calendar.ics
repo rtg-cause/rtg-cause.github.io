@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//YourSiteName//Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+{% for event in site.calendar %}
+BEGIN:VEVENT
+UID:{{ event.url | absolute_url }}
+DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}
+DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}
+DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}
+SUMMARY:{{ event.title | strip_newlines }}
+DESCRIPTION:{{ event.description | strip_newlines | escape }}
+LOCATION:{{ event.location | strip_newlines | escape }}
+URL:{{ event.url | absolute_url }}
+END:VEVENT
+{% endfor %}
+END:VCALENDAR
