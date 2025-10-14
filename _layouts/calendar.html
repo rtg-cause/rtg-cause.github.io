@@ -21,7 +21,7 @@ layout: default
       end: "{{ event.end_date | date_to_xmlschema }}",
       description: "{{ event.description | escape }}",
       location: "{{ event.location | escape }}",
-      url: "{{ event.url | relative_url }}"
+      url: "{{ event.data.url | relative_url }}"
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ];
@@ -35,7 +35,7 @@ layout: default
         info.jsEvent.preventDefault();
         const e = info.event.extendedProps;
         alert(
-          `${info.event.title}\n\n${e.description || ''}\n${e.location || ''}\n\n${info.event.start}`
+          `${info.event.title}\n\n${e.description || ''}\n${e.location || ''}\n\n${info.event.start}\n\n${info.event.end}`
         );
       }
     });
