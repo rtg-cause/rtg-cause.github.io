@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<h1 class="text-2xl font-bold mb-4">Event Calendar</h1>
+
+<p><a href="{{ '/assets/calendar.ics' | relative_url }}" download>📅 Download ICS (iCalendar)</a></p>
+
+<div id="calendar"></div>
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+<script>
+  // Inject Jekyll data
+  const events = [
+    {% for event in site.calendar %}
+    {
+      title: "{{ event.title | escape }}",
+      start: "{{ event.start_date | date_to_xmlschema }}",
+      end: "{{ event.end_date | date_to_xmlschema }}",
+      description: "{{ event.description | escape }}",
+      location: "{{ event.location | escape }}",
+      url: "{{ event.url | relative_url }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: events,
+      eventClick: function(info) {
+        info.jsEvent.preventDefault();
+        const e = info.event.extendedProps;
+        alert(
+          `${info.event.title}\n\n${e.description || ''}\n${e.location || ''}\n\n${info.event.start}`
+        );
+      }
+    });
+    calendar.render();
+  });
+</script>
