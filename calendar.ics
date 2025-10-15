@@ -1,6 +1,7 @@
 ---
 layout: none
 permalink: /assets/calendar.ics
+content-type: text/calendar
 ---
 BEGIN:VCALENDAR{% raw %}\
 {% endraw %}VERSION:2.0{% raw %}\
