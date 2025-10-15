@@ -2,27 +2,25 @@
 layout: none
 permalink: /assets/calendar.ics
 ---
-{% comment %}
-Define the newline character
-{% endcomment %}
-{% capture newline %}
-{% endcapture %}
-
-BEGIN:VCALENDAR{{ newline }}
-VERSION:2.0{{ newline }}
-PRODID:-//YourSiteName//Calendar//EN{{ newline }}
-CALSCALE:GREGORIAN{{ newline }}
-METHOD:PUBLISH{{ newline }}
+{% capture ical_content %}
+{% assign nl = "
+" -%}BEGIN:VCALENDAR{{ nl }}
+VERSION:2.0{{ nl }}
+PRODID:-//YourSiteName//Calendar//EN{{ nl }}
+CALSCALE:GREGORIAN{{ nl }}
+METHOD:PUBLISH{{ nl }}
 {% for event in site.calendar %}
-BEGIN:VEVENT{{ newline }}
-UID:{{ event.url | absolute_url }}{{ newline }}
-DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{{ newline }}
-DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}{{ newline }}
-DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}{{ newline }}
-SUMMARY:{% include fold.liquid field=event.title newline=newline %}{{ newline }}
-DESCRIPTION:{% include fold.liquid field=event.description newline=newline %}{{ newline }}
-LOCATION:{% include fold.liquid field=event.location newline=newline %}{{ newline }}
-{% if event.eventurl %}URL:{% include fold.liquid field=event.eventurl newline=newline %}{{ newline }}{% endif %}
-END:VEVENT{{ newline }}
+BEGIN:VEVENT{{ nl }}
+UID:{{ event.url | absolute_url }}{{ nl }}
+DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{{ nl }}
+DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl }}
+DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl }}
+SUMMARY:{% include fold.liquid field=event.title newline=nl %}{{ nl }}
+DESCRIPTION:{% include fold.liquid field=event.description newline=nl %}{{ nl }}
+LOCATION:{% include fold.liquid field=event.location newline=nl %}{{ nl }}
+{% if event.eventurl %}URL:{% include fold.liquid field=event.eventurl newline=nl %}{{ nl }}{% endif %}
+END:VEVENT{{ nl }}
 {% endfor %}
 END:VCALENDAR
+{% endcapture %}
+{{ ical_content }}
