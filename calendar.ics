@@ -1,36 +1,37 @@
 ---
 layout: none
 permalink: /assets/calendar.ics
+content-type: text/calendar
 ---
-BEGIN:VCALENDAR{% raw %}
-{% endraw %}VERSION:2.0{% raw %}
-{% endraw %}PRODID:-//CAUSE//Calendar//EN{% raw %}
-{% endraw %}CALSCALE:GREGORIAN{% raw %}
-{% endraw %}METHOD:PUBLISH{% raw %}
+BEGIN:VCALENDAR{% raw %}\
+{% endraw %}VERSION:2.0{% raw %}\
+{% endraw %}PRODID:-//CAUSE//Calendar//EN{% raw %}\
+{% endraw %}CALSCALE:GREGORIAN{% raw %}\
+{% endraw %}METHOD:PUBLISH{% raw %}\
 {% endraw %}{% for event in site.calendar %}
-BEGIN:VEVENT{% raw %}
-{% endraw %}DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{% raw %}
-{% endraw %}DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%S" }}{% raw %}
-{% endraw %}DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%S" }}{% raw %}
-{% endraw %}SUMMARY:CAUSE - {{ event.title | strip_newlines }}{% raw %}
+BEGIN:VEVENT{% raw %}\
+{% endraw %}DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{% raw %}\
+{% endraw %}DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%S" }}{% raw %}\
+{% endraw %}DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%S" }}{% raw %}\
+{% endraw %}SUMMARY:CAUSE - {{ event.title | strip_newlines }}{% raw %}\
 {% endraw %}DESCRIPTION:CAUSE 
  {{ event.description | strip_newlines | escape }}
-LOCATION:{% include chunk.ics string=event.location n=66 %}{% raw %}
+LOCATION:{% include chunk.ics string=event.location n=66 %}{% raw %}\
 {% endraw %}
 {% if event.data.url %}
-UID:{{ eventurl | absolute_url }}{% raw %}
-{% endraw %}URL:{{ eventurl | absolute_url}}{% raw %}
+UID:{{ eventurl | absolute_url }}{% raw %}\
+{% endraw %}URL:{{ eventurl | absolute_url}}{% raw %}\
 {% endraw %}
 {% endif %}
 {% if event.reminder %}
-BEGIN:VALARM{% raw %}
-{% endraw %}ACTION:DISPLAY{% raw %}
-{% endraw %}TRIGGER:-P{{ event.reminder }}{% raw %}
-{% endraw %}DESCRIPTION:Reminder for CAUSE Event{% raw %}
-{% endraw %}END:VALARM{% raw %}
+BEGIN:VALARM{% raw %}\
+{% endraw %}ACTION:DISPLAY{% raw %}\
+{% endraw %}TRIGGER:-P{{ event.reminder }}{% raw %}\
+{% endraw %}DESCRIPTION:Reminder for CAUSE Event{% raw %}\
+{% endraw %}END:VALARM{% raw %}\
 {% endraw %}
 {% endif %}
-END:VEVENT{% raw %}
+END:VEVENT{% raw %}\
 {% endraw %}
 {% endfor %}
 END:VCALENDAR
