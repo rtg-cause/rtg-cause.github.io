@@ -15,7 +15,7 @@ DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%S" }}
 SUMMARY:CAUSE - {{ event.title | strip_newlines }}
 DESCRIPTION:CAUSE 
  {{ event.description | strip_newlines | escape }}
-LOCATION:{% include chunk.html string=event.location n=66 %}
+LOCATION:{% include chunk.ics string=event.location n=66 %}
 {% if event.data.url %}
 UID:{{ eventurl | absolute_url }}
 URL:{{ eventurl | absolute_url}}
