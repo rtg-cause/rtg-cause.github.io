@@ -3,12 +3,10 @@ Usage:
   {% include chunk.html string="abcdefghijklmnopqrstuvwx" n=8 %}
 This will insert <br> after every n characters.
 {%- endcomment -%}
-
 {%- assign text = include.string | default: "" -%}
 {%- assign n = include.n | default: 10 | plus: 0 -%}
 {%- assign len = text | size -%}
 {%- assign chunk_count = len | plus: n | minus: 1 | divided_by: n -%}
-
 {%- for i in (0..chunk_count) -%}
   {%- assign start = i | times: n -%}
   {%- if start < len -%}
