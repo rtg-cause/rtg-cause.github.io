@@ -7,7 +7,7 @@ collections:
     output: true
   calendar:
     output: true
-    permalink: /calendar/:title/
+    permalink: /:collection/:name
 
 defaults:
   - scope:

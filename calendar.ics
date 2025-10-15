@@ -1,36 +1,28 @@
 ---
 layout: none
 permalink: /assets/calendar.ics
-content-type: text/calendar
 ---
-{% capture ical %}
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//CAUSE//Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
+{% comment %}
+Define the newline character
+{% endcomment %}
+{% capture newline %}
+{% endcapture %}
+
+BEGIN:VCALENDAR{{ newline }}
+VERSION:2.0{{ newline }}
+PRODID:-//YourSiteName//Calendar//EN{{ newline }}
+CALSCALE:GREGORIAN{{ newline }}
+METHOD:PUBLISH{{ newline }}
 {% for event in site.calendar %}
-BEGIN:VEVENT
-DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}
-DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%S" }}
-DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%S" }}
-SUMMARY:CAUSE - {{ event.title | strip_newlines }}
-DESCRIPTION:CAUSE{% raw %}
- {% endraw %}{{ event.description | strip_newlines | escape }}
-LOCATION:{{ event.location | strip_newlines | escape }}
-{% if event.data.url %}
-UID:{{ eventurl | absolute_url }}
-URL:{{ eventurl | absolute_url}}
-{% endif %}
-{% if event.reminder %}
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P{{ event.reminder }}
-DESCRIPTION:Reminder for CAUSE Event
-END:VALARM
-{% endif %}
-END:VEVENT
+BEGIN:VEVENT{{ newline }}
+UID:{{ event.url | absolute_url }}{{ newline }}
+DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{{ newline }}
+DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}{{ newline }}
+DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}{{ newline }}
+SUMMARY:{% include fold.liquid field=event.title newline=newline %}{{ newline }}
+DESCRIPTION:{% include fold.liquid field=event.description newline=newline %}{{ newline }}
+LOCATION:{% include fold.liquid field=event.location newline=newline %}{{ newline }}
+{% if event.eventurl %}URL:{% include fold.liquid field=event.eventurl newline=newline %}{{ newline }}{% endif %}
+END:VEVENT{{ newline }}
 {% endfor %}
 END:VCALENDAR
-{% endcapture %}
-{{ ical | replace: '\n', '\r\n' }}
