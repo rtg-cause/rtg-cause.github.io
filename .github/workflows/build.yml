@@ -9,7 +9,6 @@ name: Build
 on:
   # Runs on pushes  targeting the default branch and on pull-requests
   pull_request:
-  push:
     branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
