@@ -10,7 +10,7 @@ This will insert <br> after every n characters.
 {%- for i in (0..chunk_count) -%}
   {%- assign start = i | times: n -%}
   {%- if start < len -%}
-    {{ text | slice: start, n }}{% raw %}
+    {{ text | slice: start, n }}{% raw %}\
  {% endraw %}
   {%- endif -%}
 {%- endfor -%}
