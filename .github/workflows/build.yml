@@ -62,7 +62,7 @@ jobs:
           echo "$PROCESSED_CONTENT" > _site/assets/CAUSE_calendar.ics
           
           # 4. Remove the intermediate .liquid file
-          rm _site/assets/calendar.ics.liquid
+          rm _site/assets/CAUSE_calendar.ics.liquid
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
