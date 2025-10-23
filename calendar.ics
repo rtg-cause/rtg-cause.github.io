@@ -2,6 +2,7 @@
 layout: none
 permalink: /assets/CAUSE_calendar.ics.liquid
 ---
+{% capture ical_content %}
 {% comment %}
 Define placeholder for iCalendar's required CR+LF line endings: @@CRLF@@
 And the placeholder for line folding: @@FOLD@@
@@ -31,3 +32,5 @@ LOCATION:{% include fold.liquid field=event.location fold_char=fold_char max_len
 END:VEVENT{{ nl_placeholder }}
 {% endfor %}
 END:VCALENDAR
+{% endcapture %}
+{{ ical_content }}
