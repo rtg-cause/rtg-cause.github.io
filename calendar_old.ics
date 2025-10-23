@@ -1,0 +1,23 @@
+---
+layout: none
+permalink: /assets/CAUSE_calendar_raw.ics
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//YourSiteName//Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+{% for event in site.calendar %}
+BEGIN:VEVENT
+UID:{{ event.url | absolute_url }}
+DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}
+DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}
+DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}
+SUMMARY:{{ event.title }}
+DESCRIPTION:
+ {{ event.description }}
+LOCATION:
+ {{ event.location }}
+{% if event.eventurl %}URL:{{ event.eventurl }}{% endif %}
+END:VEVENT{% endfor %}
+END:VCALENDAR
