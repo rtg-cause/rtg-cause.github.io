@@ -6,13 +6,13 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Build
 
-#on:
-#  # Runs on pushes  targeting the default branch and on pull-requests
-#  pull_request:
-#    branches: ["main"]
-#
-#  # Allows you to run this workflow manually from the Actions tab
-#  workflow_dispatch:
+on:
+  # Runs on pushes  targeting the default branch and on pull-requests
+  pull_request:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -48,6 +48,21 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Process and Finalize ICS File
+        run: |
+          # 1. Read the Jekyll-built file containing placeholders
+          RAW_CONTENT=$(cat _site/assets/CAUSE_calendar.ics.liquid)
+          
+          # 2. Perform the CR+LF and folding replacement using sed.
+          #    \r\n is the literal iCalendar line ending.
+          #    \r\n[space] is the literal iCalendar folding sequence.
+          PROCESSED_CONTENT=$(echo "$RAW_CONTENT" | sed 's/##NEWLINE##/\r\n /g')
+
+          # 3. Write the final, corrected .ics file to the published folder (_site)
+          echo "$PROCESSED_CONTENT" > _site/assets/CAUSE_calendar.ics
+          
+          # 4. Remove the intermediate .liquid file
+          rm _site/calendar.ics.liquid
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
