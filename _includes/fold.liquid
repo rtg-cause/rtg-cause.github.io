@@ -1,34 +1,22 @@
 {%- comment -%}
 _includes/fold.liquid
-- Takes include.field as the content to be folded.
-- Takes include.newline as the newline character (passed from calendar.ics).
-- Folds the content after 75 characters per the iCalendar spec (RFC 5545).
+- Takes include.field, include.fold_char (@@FOLD@@), and include.max_len (75).
 {%- endcomment -%}
-
 {%- assign raw = include.field | default: "" -%}
-{%- assign nl = include.newline | default: "
-" -%}
-{%- assign max_len = 75 -%}
+{%- assign fold_char = include.fold_char -%}
+{%- assign max_len = include.max_len | default: 75 -%}
 
-{%- comment -%} Normalize line endings and collapse multiple newlines into a single space {%- endcomment -%}
+{%- comment -%} Normalize content: replace newlines with a space {%- endcomment -%}
 {%- assign raw = raw | replace: '\r\n', '\n' | replace: '\r', '\n' -%}
 {%- assign raw = raw | split: '\n' | join: ' ' | strip -%}
 
 {%- assign len = raw | size -%}
-
-{%- comment -%}
-Calculate the number of chunks needed (integer division, round up).
-e.g., 151 chars / 75 = 2.013... -> 3 chunks
-Liquid's 'divided_by' returns a float, 'ceil' rounds up.
-{%- endcomment -%}
 {%- assign num_chunks = len | divided_by: max_len | ceil -%}
 {%- assign out = "" -%}
 
-{%- comment -%} Loop from 0 up to (but not including) num_chunks {%- endcomment -%}
 {%- for i in (0..num_chunks) -%}
   {%- assign chunk_start = i | times: max_len -%}
-  
-  {%- comment -%} Break the loop if the start index exceeds the string length {%- endcomment -%}
+
   {%- if chunk_start >= len -%}
     {%- break -%}
   {%- endif -%}
@@ -36,11 +24,10 @@ Liquid's 'divided_by' returns a float, 'ceil' rounds up.
   {%- assign chunk = raw | slice: chunk_start, max_len -%}
 
   {%- if i == 0 -%}
-    {%- comment -%} First line gets no preceding newline or space {%- endcomment -%}
     {%- assign out = out | append: chunk -%}
   {%- else -%}
-    {%- comment -%} Continuation lines get a newline (nl) followed by a space {%- endcomment -%}
-    {%- assign out = out | append: nl | append: ' ' | append: chunk -%}
+    {%- comment -%} Use the folding placeholder {%- endcomment -%}
+    {%- assign out = out | append: fold_char | append: chunk -%}
   {%- endif -%}
 {%- endfor -%}
 

@@ -1,26 +1,33 @@
 ---
 layout: none
-permalink: /assets/calendar.ics
+permalink: /assets/CAUSE_calendar.ics.liquid
 ---
-{% capture ical_content %}
-{% assign nl = "
-" -%}BEGIN:VCALENDAR{{ nl }}
-VERSION:2.0{{ nl }}
-PRODID:-//YourSiteName//Calendar//EN{{ nl }}
-CALSCALE:GREGORIAN{{ nl }}
-METHOD:PUBLISH{{ nl }}
+{% comment %}
+Define placeholder for iCalendar's required CR+LF line endings: @@CRLF@@
+And the placeholder for line folding: @@FOLD@@
+{% endcomment %}
+{% assign nl_placeholder = "##NEWLINE##" %}
+{% assign fold_char = "##NEWLINE##" %}
+{% assign max_len = 75 %}
+
+{% comment %}
+-- START ICS CONTENT CAPTURE --
+{% endcomment %}
+BEGIN:VCALENDAR{{ nl_placeholder }}
+VERSION:2.0{{ nl_placeholder }}
+PRODID:-//YourSiteName//Calendar//EN{{ nl_placeholder }}
+CALSCALE:GREGORIAN{{ nl_placeholder }}
+METHOD:PUBLISH{{ nl_placeholder }}
 {% for event in site.calendar %}
-BEGIN:VEVENT{{ nl }}
-UID:{{ event.url | absolute_url }}{{ nl }}
-DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{{ nl }}
-DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl }}
-DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl }}
-SUMMARY:{% include fold.liquid field=event.title newline=nl %}{{ nl }}
-DESCRIPTION:{% include fold.liquid field=event.description newline=nl %}{{ nl }}
-LOCATION:{% include fold.liquid field=event.location newline=nl %}{{ nl }}
-{% if event.eventurl %}URL:{% include fold.liquid field=event.eventurl newline=nl %}{{ nl }}{% endif %}
-END:VEVENT{{ nl }}
+BEGIN:VEVENT{{ nl_placeholder }}
+UID:{{ event.url | absolute_url }}{{ nl_placeholder }}
+DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{{ nl_placeholder }}
+DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl_placeholder }}
+DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl_placeholder }}
+SUMMARY:{% include fold.liquid field=event.title fold_char=fold_char max_len=max_len %}{{ nl_placeholder }}
+DESCRIPTION:{% include fold.liquid field=event.description fold_char=fold_char max_len=63 %}{{ nl_placeholder }}
+LOCATION:{% include fold.liquid field=event.location fold_char=fold_char max_len=66 %}{{ nl_placeholder }}
+{% if event.eventurl %}URL:{% include fold.liquid field=event.eventurl fold_char=fold_char max_len=max_len %}{{ nl_placeholder }}{% endif %}
+END:VEVENT{{ nl_placeholder }}
 {% endfor %}
 END:VCALENDAR
-{% endcapture %}
-{{ ical_content }}
