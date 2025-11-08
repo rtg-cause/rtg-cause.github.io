@@ -22,9 +22,9 @@ METHOD:PUBLISH{{ nl_placeholder }}
 {% for event in site.calendar %}
 BEGIN:VEVENT{{ nl_placeholder }}
 UID:{{ event.url | absolute_url }}{{ nl_placeholder }}
-DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%SZ" }}{{ nl_placeholder }}
-DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl_placeholder }}
-DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%SZ" }}{{ nl_placeholder }}
+DTSTAMP:{{ "now" | date: "%Y%m%dT%H%M%S" }}{{ nl_placeholder }}
+DTSTART:{{ event.start_date | date: "%Y%m%dT%H%M%S" }}{{ nl_placeholder }}
+DTEND:{{ event.end_date | date: "%Y%m%dT%H%M%S" }}{{ nl_placeholder }}
 SUMMARY:{% include fold.liquid field=event.title fold_char=fold_char max_len=max_len %}{{ nl_placeholder }}
 DESCRIPTION:{% include fold.liquid field=event.description fold_char=fold_char max_len=63 %}{{ nl_placeholder }}
 LOCATION:{% include fold.liquid field=event.location fold_char=fold_char max_len=66 %}{{ nl_placeholder }}
