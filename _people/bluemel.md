@@ -6,9 +6,7 @@ link: https://uol.de/ei/mitarbeiter/kersten-bluemel
 role: fellow
 ---
 
-I am a research assistant at Carl von Ossietzky University Oldenburg and the OFFIS Institute for Information Technology. In April 2025, I joined CAUSE as part of its second cohort of fellows.
+I am a research assistant with the Energy Informatics group at Carl von Ossietzky University of Oldenburg and the OFFIS Institute for Information Technology. In April 2025, I joined CAUSE as part of its second cohort of fellows.
 
-# Research Topics
+# Research Topic
 - Trustworthy Operation of Cyber-Physical Energy Systems
-- Digital Twins
-- Energy Management Systems
