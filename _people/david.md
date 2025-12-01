@@ -1,6 +1,7 @@
 ---
 short_name: David
 name: Ivo Fagundes David de Oliveira
+email: ivo.david@uni-oldenburg.de 
 link: https://rtg-cause.github.io/people/david
 role: fellow
 ---
