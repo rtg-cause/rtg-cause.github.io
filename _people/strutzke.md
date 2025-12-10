@@ -4,4 +4,4 @@ name: Sabine Strutzke
 link: https://www.tuhh.de/es/ce/people/sstrutzke
 role: coordinator
 ---
-Sabine Strutzke is the project manager of CAUSE.test3.
+Sabine Strutzke is the project manager of CAUSE
