@@ -1,5 +1,5 @@
 ---
-title: Paper Writing Workshop
+title: CAUSE Paper Writing Workshop
 start_date: 2026-03-11 08:00
 end_date: 2026-03-12 18:00
 location: Online 
