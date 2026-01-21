@@ -1,7 +1,7 @@
 ---
 short_name: akbari
 name: Laleh Akbari
-link:https://agra.informatik.uni-bremen.de/team_me.php?id=248
+link: https://agra.informatik.uni-bremen.de/team_me.php?id=248
 role: Fellow
 ---
 
