@@ -6,7 +6,3 @@ location: at the TUHH and hybrid - more Details will follow by mail
 description: "Leveraging the properties of the Christoffel function for anomaly detection in data streams"
 reminder: 5M
 ---
-
-* Organization
-* Scientific discussion
-s the project manager of CAUSE.test..
