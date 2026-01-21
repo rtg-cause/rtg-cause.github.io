@@ -7,5 +7,4 @@ description: More details will follow by mail
 reminder: 5M
 ---
 
-* Organization
-* Scientific discussion
+
