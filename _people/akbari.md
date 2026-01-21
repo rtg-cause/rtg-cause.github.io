@@ -1,5 +1,5 @@
 ---
-short_name: Akbari
+short_name: akbari
 name: Laleh Akbari
 link:https://agra.informatik.uni-bremen.de/team_me.php?id=248
 role: Fellow
@@ -20,4 +20,3 @@ I am a Doctoral Research Assistant at the University of Bremen under supervision
 # Other Interests
 - Fault Tolerant Systems
 - Hardware/Software Co-Design
----
