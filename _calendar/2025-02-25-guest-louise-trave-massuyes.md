@@ -1,5 +1,5 @@
 ---
-title: CAUSE Hybrid Meeting
+title: CAUSE Guest Louise Trave-Massuyes
 start_date: 2026-02-25 08:30
 end_date: 2026-02-27 13:00
 location: at the TUHH and hybrid - more Details will follow by mail
