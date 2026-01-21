@@ -1,5 +1,5 @@
 ---
-title: Visiting SIEMENS company
+title: CAUSE visits Siemens Mobility
 start_date: 2026-04-30 10:00
 end_date: 2026-04-30 18:00
 location: Braunschweig

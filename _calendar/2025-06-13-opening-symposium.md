@@ -1,5 +1,5 @@
 ---
-title: Opening Symposium
+title: CAUSE Opening Symposium
 start_date: 2025-06-13 09:00
 end_date: 2025-06-13 17:00
 location: Online
