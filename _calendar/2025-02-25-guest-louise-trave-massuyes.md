@@ -1,7 +1,7 @@
 ---
 title: CAUSE Hybrid Meeting
-start_date: 2027-02-25 08:30
-end_date: 2027-02-27 13:00
+start_date: 2026-02-25 08:30
+end_date: 2026-02-27 13:00
 location: at the TUHH and hybrid - more Details will follow by mail
 description: "Leveraging the properties of the Christoffel function for anomaly detection in data streams"
 reminder: 5M
