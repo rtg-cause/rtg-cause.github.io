@@ -1,5 +1,5 @@
 ---
-short_name: cplump
+short_name: plump
 name: Christina Plump
 link: https://agra.informatik.uni-bremen.de/team_me.php?id=124&lang=de
 role: associate
