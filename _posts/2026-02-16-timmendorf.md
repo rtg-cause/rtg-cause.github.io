@@ -3,9 +3,10 @@ layout: post
 author: fey
 title: "CAUSE Retreat 2026: Timmendorfer Strand"
 ---
-<img align="left" width=200 height=auto style="border: 10px solid white;" src="\assets\img\Timmendorf1" class="img-fluid" alt="Group Photo">
+<img align="left" width=200 height=auto style="border: 10px solid white;" src="\assets\img\Timmendorf1.webp" class="img-fluid" alt="Group Photo">
 
-<p>CAUSE Retreat 2026: One Year In Retrospective and New Prospects Ahead</p>
+<p>CAUSE Retreat 2026: One Year In Retrospective and New Prospects Ahead </p>
+
 
 We are happy to announce the conclusion of this year's successful academic retreat at Timmendorfer Strand. The whole research training group CAUSE came together to synchronize and review our research status, discuss, and explore current developments in the field of self-explanation. Specifically, the second cohort discovered plenty of opportunities for future collaboration and research directions.
 The retreat featured two keynote talks by experts in the fields of software verification and wind farm control. Prof. Dr. Christel Baier (University of Dresden) presented "Verification meets Causality", a talk connecting the field of verification with reasoning about what influences the results. Dr. Vlaho Petrovic presented "Wind Park Control", a talk about the physical and technical challenges in the control of wind parks and individual wind engines giving great entry points for CAUSE. In addition, the members of CAUSE organized presentations and posters about their own projects.
