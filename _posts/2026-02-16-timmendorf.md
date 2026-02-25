@@ -14,5 +14,5 @@ Carrying the inspiration from the presentations and conversations, the PhD stude
 
 As a result, focused research within the next few months will consider cross-level explanations and logic foundations for self-explanation.
 
-
+<img src="\assets\img\Timmendorf1.webp" class="img-fluid" alt="Group photo">
 <img src="\assets\img\Timmendorf2.webp" class="img-fluid" alt="Group photo">
