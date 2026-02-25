@@ -5,7 +5,7 @@ title: "CAUSE Retreat 2026: Timmendorfer Strand"
 ---
 <img align="left" width=200 height=auto style="border: 10px solid white;" src="\assets\img\Timmendorf1.webp" class="img-fluid" alt="Group Photo">
 
-<p><h2>CAUSE Retreat 2026: One Year In Retrospective and New Prospects Ahead</h2> </p>
+<p>CAUSE Retreat 2026: One Year In Retrospective and New Prospects Ahead </p>
 
 
 We are happy to announce the conclusion of this year's successful academic retreat at Timmendorfer Strand. The whole research training group CAUSE came together to synchronize and review our research status, discuss, and explore current developments in the field of self-explanation. Specifically, the second cohort discovered plenty of opportunities for future collaboration and research directions.
