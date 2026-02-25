@@ -3,7 +3,7 @@ layout: post
 author: fey
 title: "CAUSE Retreat 2026: Timmendorfer Strand"
 ---
-<img src="\assets\img\Timmendorf1.webp" class="img-fluid" alt="Group photo">
+<img align="left" width=200 height=auto style="border: 10px solid white;" src="\assets\img\Timmendorf1.webp" class="img-fluid" alt="Group Photo">
 
 <p><h2>CAUSE Retreat 2026: One Year In Retrospective and New Prospects Ahead</h2> </p>
 
