@@ -3,10 +3,7 @@ layout: post
 author: reinecke
 title: "CAUSE Retreat 2026: Timmendorfer Strand"
 ---
-<img src="/assets/img/Timmendorf1.webp" 
-     class="img-fluid"
-     alt="Group photo"
-     style="max-width: 60%; height: auto;">
+<img align="left" width=200 height=auto style="border: 10px solid white;" src="\assets\img\Timmendorf1.jpg" class="img-fluid" alt="Group Photo">
 <p>CAUSE Retreat Timmendorfer Strand 2026</p> 
 <p><h2>One Year In</h2> </p>
 
