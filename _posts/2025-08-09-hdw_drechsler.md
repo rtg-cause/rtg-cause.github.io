@@ -12,6 +12,9 @@ See the original announcement here:
 [https://hausderwissenschaft.de/Vertrauen-ist-gut-Verstehen-ist-besser-Wie-technische-Geraete-ihre-Entscheidungen-erklaeren-2.html](https://hausderwissenschaft.de/Vertrauen-ist-gut-Verstehen-ist-besser-Wie-technische-Geraete-ihre-Entscheidungen-erklaeren-2.html)
 <br>
 <br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/310YFIUjzfw?si=-JwpgWaUskr7Om4p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<br>
 <img src="\assets\img\20250809_hdw_drechsler.jpg" class="img-fluid" alt="Before the presentation">
 <br>
 
