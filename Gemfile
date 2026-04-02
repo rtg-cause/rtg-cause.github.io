@@ -8,6 +8,8 @@ gem "wdm", ">= 0.1.0" if Gem.win_platform?
 gem "fiddle"
 gem "github-pages-health-check"
 gem "faraday-retry"
+gem "icalendar"
+gem "tzinfo-data"
 
 group :jekyll_plugins do
     gem "jekyll-seo-tag"
