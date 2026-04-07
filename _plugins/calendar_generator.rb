@@ -14,10 +14,11 @@ module Jekyll
         priority :low # Run after most generators
 
         TIMEZONE = 'Europe/Berlin'
+        SITE_URL = 'https://rtg-cause.github.io'
 
         def generate(site)
             cal = Icalendar::Calendar.new
-            cal.prodid = '-YourSiteName//Calendar//EN'
+            cal.prodid = '-//YourSiteName//Calendar//EN'
             cal.calscale = 'GREGORIAN'
             cal.publish # Adds METHOD:PUBLISH
 
@@ -25,10 +26,11 @@ module Jekyll
             tz = TZInfo::Timezone.get(TIMEZONE)
             cal.add_timezone tz.ical_timezone(Time.now)
 
-            events = site.collections['calendar'].docs.map(&:data)
-            events.each do |event|
+            events = site.collections['calendar'].docs
+            events.each do |doc|
+                event = doc.data
                 cal.event do |e|
-                    e.uid = "#{site.config['url']}#{event['url']}"
+                    e.uid = "#{SITE_URL}#{doc.url}"
                     e.dtstamp = Icalendar::Values::DateTime.new(Time.now.utc, 'tzid' => 'UTC')
 
                     e.dtstart = ical_datetime(event['start_date'])
