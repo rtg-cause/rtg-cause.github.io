@@ -18,7 +18,7 @@ module Jekyll
 
         def generate(site)
             cal = Icalendar::Calendar.new
-            cal.prodid = '-YourSiteName//Calendar//EN'
+            cal.prodid = '-//YourSiteName//Calendar//EN'
             cal.calscale = 'GREGORIAN'
             cal.publish # Adds METHOD:PUBLISH
 
