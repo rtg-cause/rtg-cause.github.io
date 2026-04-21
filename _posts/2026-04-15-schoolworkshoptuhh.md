@@ -38,5 +38,5 @@ expand our workshop
 
 
 
-<img src="\assets\img\Timmendorf1.webp" class="img-fluid" alt="Group photo">
-<img src="\assets\img\Timmendorf2.webp" class="img-fluid" alt="Group photo">
+<img src="\assets\img\schoolworkshop_15_04_2026_2.webp" class="img-fluid" alt="Group photo">
+<img src="\assets\img\schoolworkshop_15_04_2026_3.webp" class="img-fluid" alt="Group photo">
