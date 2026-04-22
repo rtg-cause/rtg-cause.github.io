@@ -5,7 +5,7 @@ title: "CAUSE SCHOOLWORKSHOP AT TUHH"
 ---
 <img align="left" width=200 height=auto style="border: 10px solid white;" src="\assets\img\schoolworkshop_15_04_2026_1.webp" class="img-fluid" alt="Group Photo">
 
-<p>CAUSE Schoolworkshop at the TUHH in Cooperation with the Mint</p>
+<p>CAUSE Schoolworkshop at the TUHH in Cooperation with Mint:Pink</p>
 
 On April 15th, we hosted a student workshop at TUHH in cooperation with 
 the Mint:Pink programme. The programme supports talented and interested female 
