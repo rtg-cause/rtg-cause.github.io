@@ -1,7 +1,7 @@
 ---
 short_name: koojo
 name: Ivan Koojo
-link: <a href="mailto:ivan.koojo@dlr.de">Ivan Koojo</a>
+email: ivan.koojo@dlr.de
 role: associate
 ---
 I am a Doctoral Fellow at the DLR Institute of Systems Engineering for Future Mobility (DLR-SE), and PhD candidate at the University of Oldenburg (UoL).
