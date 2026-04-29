@@ -21,3 +21,11 @@ h2.bibliography {
 }
 
 @import "bootstrap";
+
+.fc-event {
+    cursor: pointer;
+}
+
+body.modal-open {
+    padding-right: 0 !important;
+}
