@@ -1,7 +1,7 @@
 ---
 short_name: tariq
 name: Raazia Tariq
-link: [https://uol.de/ehs/team/raazia-tariq](https://uol.de/en/computingscience/groups/eingebettete-hardware-/software-systeme/team/msc-raazia-tariq)
+link: https://uol.de/en/computingscience/groups/eingebettete-hardware-/software-systeme/team/msc-raazia-tariq
 role: fellow
 ---
 
@@ -13,8 +13,6 @@ My research focuses on **hardrware aware RL environments**, **energy-efficient n
 
 I am open to collaboration on related research projects.
 
----
-
 ## Current Research
 
 - Reinforcement learning for cellular and network optimization  
@@ -22,8 +20,6 @@ I am open to collaboration on related research projects.
 - Energy-efficient base station and cell-level control  
 - Explainable reinforcement learning (SHAP, LIME, custom explainability metrics)  
 - Measurement-based environments and concept drift awareness  
-
----
 
 ## Other Interests
 
@@ -33,5 +29,3 @@ I am open to collaboration on related research projects.
 - Explainable AI for safety-critical and real-time systems  
 - Hardware-aware ML systems  
 - Reinforcement Lerarning for industrial robots.
-
----
