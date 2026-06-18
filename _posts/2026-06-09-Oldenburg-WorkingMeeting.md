@@ -13,6 +13,6 @@ The second day began with a poster session where participants could discuss the 
 Everyone is already looking forward to the next meeting, which will take place in Bremen in November. 
 
 
-
+<img src="\assets/img/schwammberger_maike.webp" class="img-fluid" alt="Group photo">
 
 <img src="\assets/img/2026-06-09-Oldenburg-gruppenbild.webp" class="img-fluid" alt="Group photo">
