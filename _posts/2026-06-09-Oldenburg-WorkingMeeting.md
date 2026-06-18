@@ -14,6 +14,4 @@ Everyone is already looking forward to the next meeting, which will take place i
 
 <img src="\assets/img/schwammberger_maike.webp" style="width: 250px; height: auto; display: block; margin: 20px auto;" alt="Maike Schwammberger">
 
-<img src="\assets/img/schwammberger_maike.webp" class="img-fluid" alt="Group photo">
-
 <img src="\assets/img/2026-06-09-Oldenburg-gruppenbild.webp" class="img-fluid" alt="Group photo">
