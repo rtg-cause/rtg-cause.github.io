@@ -12,7 +12,6 @@ On the first day, everyone gathered at the university to first receive the lates
 The second day began with a poster session where participants could discuss the progress of their work with others. Following that, Assistant Professor Dr. Maike Schwammberger presented an interesting keynote on the topic of “Self-Explainable Autonomous Systems.” The day concluded with another productive group work session before everyone headed home.
 Everyone is already looking forward to the next meeting, which will take place in Bremen in November. 
 
-img src="\assets/img/schwammberger_maike.webp" style="width: 250px; height: auto; display: block; margin: 20px auto;" alt="Maike Schwammberger">
-
+<img src="\assets/img/schwammberger_maike.webp" style="width: 250px; height: auto; display: block; margin: 20px auto;" alt="Maike Schwammberger">
 
 <img src="\assets/img/2026-06-09-Oldenburg-gruppenbild.webp" class="img-fluid" alt="Group photo">
