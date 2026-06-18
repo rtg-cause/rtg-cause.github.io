@@ -1,7 +1,7 @@
 ---
 layout: post
 author: thoben
-title: "CAUSE SCHOOLWORKSHOP AT TUHH"
+title: "CAUSE Working Meeting in Oldenburg"
 ---
 <img align="left" width=200 height=auto style="border: 10px solid white;" src="\assets/img/2026-06-09-Oldenburg-gruppenbild.webp" class="img-fluid" alt="Group Photo">
 
