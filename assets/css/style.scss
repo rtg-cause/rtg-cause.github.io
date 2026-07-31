@@ -22,6 +22,19 @@ h2.bibliography {
 
 @import "bootstrap";
 
+// Portraits on the people page vary in size and aspect ratio (most are
+// 500x520, a few are square, landscape or very small). Force them all into
+// the same box so the cards in a grid row line up. The ratio matches the
+// majority of the images, so only the outliers are cropped; the crop is
+// biased upwards to keep faces in frame.
+.person-portrait {
+    aspect-ratio: 25 / 26;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
 .fc-event {
     cursor: pointer;
 }
