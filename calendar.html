@@ -12,6 +12,26 @@ layout: default
 
 <div id="calendar"></div>
 
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true" data-bs-scroll="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="eventModalDate" class="text-muted mb-2"></p>
+        <p id="eventModalLocation" class="mb-2"></p>
+        <p id="eventModalDescription" class="mb-0"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a id="eventModalLink" href="#" class="btn btn-primary">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
@@ -23,6 +43,7 @@ layout: default
       title: "{{ event.title | escape }}",
       start: "{{ event.start_date | date: '%Y-%m-%dT%H:%M:%S' }}",
       end: "{{ event.end_date | date: '%Y-%m-%dT%H:%M:%S' }}",
+      description: "{{ event.description | escape }}",
       location: "{{ event.location | escape }}",
       url: "{{ event.eventurl | relative_url }}"
     }{% unless forloop.last %},{% endunless %}
@@ -37,12 +58,49 @@ layout: default
       eventClick: function(info) {
         info.jsEvent.preventDefault();
         var e = info.event.extendedProps;
-        alert(
-          info.event.title + "\n\n" +
-          (e.description || '') + "\n" +
-          (e.location || '') + "\n\n" +
-          info.event.start
-        );
+
+        document.getElementById('eventModalLabel').textContent = info.event.title;
+
+        // Add event start and end dates
+        var start = info.event.start;
+        var end = info.event.end;
+        var opts = { dateStyle: 'medium', timeStyle: 'short' };
+        var dateStr = start ? start.toLocaleString(undefined, opts) : '';
+        if (end) {
+          dateStr += ' - ' + end.toLocaleString(undefined, opts);
+        }
+        document.getElementById('eventModalDate').textContent = dateStr;
+
+        // Add event location, if it's an URL, wrap it in a hyperlink
+        var locEl = document.getElementById('eventModalLocation');
+        if (e.location) {
+          var urlRegex = /(https?:\/\/[^\s]+)/g;
+          locEl.innerHTML = '📍 ' + e.location.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+          locEl.style.display = '';
+        } else {
+          locEl.style.display = 'none';
+        }
+
+        // Add event description
+        var descEl = document.getElementById('eventModalDescription');
+        if (e.description) {
+          descEl.textContent = e.description;
+          descEl.style.display = '';
+        } else {
+          descEl.style.display = 'none';
+        }
+
+        // Add event URL, which shows as a "View Details" button
+        var linkEl = document.getElementById('eventModalLink');
+        if (info.event.url) {
+          linkEl.href = info.event.url;
+          linkEl.style.display = '';
+        } else {
+          linkEl.style.display = 'none';
+        }
+
+        // Create modal
+        new bootstrap.Modal(document.getElementById('eventModal')).show();
       }
     });
     calendar.render();

@@ -4,7 +4,7 @@ start_date: 2026-04-30 10:00
 end_date: 2026-04-30 18:00
 location: Braunschweig
 url: 
-description: More details will follow soon.
+description: More details in Bookstack
 reminder: 5M
 ---
 

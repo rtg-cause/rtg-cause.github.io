@@ -13,6 +13,103 @@
 %% 2026
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{paul:gecco-comp:2026,
+  series = {GECCO'26 Companion},
+  title = {Can Explainability Metrics Improve Genetic Programming? Lessons from 2048},
+  url = {http://dx.doi.org/10.1145/3795101.3814717},
+  DOI = {10.1145/3795101.3814717},
+  booktitle = {Proceedings of the Genetic and Evolutionary Computation Conference Companion},
+  publisher = {ACM},
+  author = {Paul,  Lauren and Plump,  Christina and Berger,  Bernhard and Drechsler,  Rolf},
+  year = {2026},
+  month = July,
+  pages = {1135--1143},
+  collection = {GECCO'26 Companion},
+  abstract = {Genetic programming (GP) produces solutions that, while often less performant than neural networks, are uniquely amenable to analysis. In domains like game-playing, this explainability could reveal why certain policies succeed or fail—but such insights are rarely leveraged to improve the algorithms themselves. Here, we analyze a GP algorithm for 2048, testing whether structural, behavioral, or semantic metrics of evolved policies correlate with performance. While structural metrics showed no predictive power and behavioral features yielded ambiguous results, we identified a semantic feature that correlated with policy quality. Using this insight, we designed a mutation operator that improved performance. Though modest, this improvement suggests that explainability metrics can guide operator design, even when broader explanatory goals remain unmet. More broadly, our work highlights a potential advantage of GP: its solutions may be analyzable in ways that opaque methods like neural networks are not.}
+
+}
+
+@inproceedings{berger:gecco-comp:2026,
+  series = {GECCO'26 Companion},
+  title = {Ride-Sharing Simulation for Optimisation},
+  url = {http://dx.doi.org/10.1145/3795101.3814733},
+  DOI = {10.1145/3795101.3814733},
+  booktitle = {Proceedings of the Genetic and Evolutionary Computation Conference Companion},
+  publisher = {ACM},
+  author = {Berger,  Bernhard J. and Plump,  Christina and Drechsler,  Rolf},
+  year = {2026},
+  month = July,
+  pages = {1491--1494},
+  collection = {GECCO'26 Companion},
+  abstract = {Optimisation research requires possibilities to test and evaluate new algorithms and algorithm adaptions. Two interesting problem classes—relevant to society—that covers shortest path problems and resource allocation in a very dynamic environment, with the possibility of running endlessly, are ride-hailing and ride-sharing. This paper presents an extensible simulation framework for ride-hailing and ride-sharing problems that allows researchers to create solutions in any program language, provides a graphical user-interface, and automatic evaluation.}
+}
+
+@inproceedings{10.1145/3788550.3794940,
+author = {Torbati, Ali and Matis, Stanislaw and Kl\"{o}s, Verena},
+title = {FactorySim: An Interactive Testbed for Adaptive Multi-Objective Production Scheduling},
+year = {2026},
+isbn = {9798400724459},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3788550.3794940},
+doi = {10.1145/3788550.3794940},
+abstract = {Modern manufacturing needs to be flexible and resilient, thus requiring dynamic production scheduling that considers different capabilities and costs of available workstations and robots, and optimizes multiple-objectives under varying operation conditions and changing goals. We present FactorySim, a simulation testbed for a modern dynamic factory that supports a) testing different scheduling and resilience strategies to cope with varying requirements of orders, availability of work stations and changing importance of objectives, and b) manual inspection through an interactive GUI. FactorySim allows researchers to deploy their own self-adaptive controllers at the task scheduling level and at the goal management level; the simulation setting can be customized easily, and the modularity of the architecture enables future extensions. We provide two adaptive schedulers and an example scenario in the exemplar.},
+booktitle = {Proceedings of the 21st International Conference on Software Engineering for Adaptive and Self-Managing Systems},
+pages = {259–264},
+numpages = {6},
+keywords = {Self-Adaptation, Optimization, Task Scheduling, Autonomous Manufacturing},
+location = {Rio de Janeiro, Brazil},
+series = {SEAMS '26}}
+
+@misc{berger:gecco-zenodo:2026,
+  author = {Berger,  Bernhard and Plump,  Christina and Rolf,  Drechsler},
+  title = {Explainable Ride-Sharing Optimisation for Sustainable Traffic Organisation},
+  doi = {10.5281/ZENODO.21539325},
+  url = {https://zenodo.org/doi/10.5281/zenodo.21539325},
+  note = {Competition Poster},
+  year = {2026},
+  additional_info = {Competition at The Genetic and Evolutionary Computation Conference (GECCO)},
+  copyright = {Creative Commons Attribution 4.0 International},
+  abstract = {GECCO'26 Competition poster of the Explainable Ride-Sharing Optimisation for Sustainable Traffic Organisation competition}
+}
+
+@inbook{paul:ki:2026,
+  title = {A Comparison of Repositioning and Scheduling Algorithms for the Ride-Hailing Problem},
+  author = {Paul,  Lauren and H\"{u}bner,  Sebastian and Plump,  Christina and Berger,  Bernhard J. and Drechsler,  Rolf},
+  year = {2026},
+  month = July,
+  ISBN = {9783032323354},
+  ISSN = {1611-3349},
+  url = {http://dx.doi.org/10.1007/978-3-032-32335-4_24},
+  DOI = {10.1007/978-3-032-32335-4_24},
+  booktitle = {KI 2026: Advances in Artificial Intelligence},
+  publisher = {Springer Nature Switzerland},
+  pages = {277--284},
+  abstract = {The Ride-Hailing Problem is an online optimization challenge that coordinates a fleet of vehicles to serve requests revealed over time. The problem is NP-hard, and many solution approaches use stochastic or machine-learning based algorithms, which perform well but are difficult to interpret. We study the trade-offs between performance and explainability. Our results show that greedy assignment consistently outperforms more complex methods, indicating that explainability need not come at the cost of efficiency. We also find that the effectiveness of repositioning strategies strongly depends on demand patterns, highlighting the value of context-aware policies.}
+}
+
+@inproceedings{Engeln.2026Signaltemporallogicfor,
+ abstract = {Hybrid systems are used to model cyber-physical systems. They combine continuous dynamics with discrete switching behavior. The manual identification of hybrid system models is time-consuming and error-prone, motivating data-driven approaches to hybrid system identification. Existing approaches focus primarily on learning the continuous dynamics and discrete modes of a hybrid automaton. For the guard conditions between modes, they apply probabilistic methods, which lack interpretable and verifiable representations. We propose the usage of signal temporal logic (STL) for learning guards. The advantages of our approach are twofold: it introduces human-readable and verifiable descriptions of transition logic and allows integrating prior knowledge by specifying templates for expected guard structures. Empirical results show that the accuracy of our approach is comparable to existing decision tree-based methods with respect to reconstructing system behavior. The learned guards are more expressive and interpretable. By this, we advance hybrid system identification towards trustworthy and explainable data-driven modeling.},
+ author = {Engeln, Ulrike and Schmidt, Maximilian and Plambeck, Swantje and Fey, G{\"o}rschwin and Schupp, Sibylle},
+ title = {{Signal temporal logic for mining guard conditions in hybrid system models}},
+ pages = {91--100},
+ publisher = {{Universit{\"a}tsbibliothek der HSU/UniBw H}},
+ editor = {Niggemann, Oliver and Beyerer, J{\"u}rgen and Kampker, Achim and Li, Rui Yan and Fey, G{\"o}rschwin and Plambeck, Swantje and Diedrich, Alexander and K{\"u}hnert, Christian},
+ booktitle = {{9th ML4CPS 2026 -- Machine Learning for Cyber-Physical Systems}},
+ year = {2026},
+ doi = {10.24405/23190},
+}
+
+
+@inproceedings{DD:MBMV26,
+ author     = {Caroline Dominik and Rolf Drechsler},
+ title      = {Using Virtual Prototypes for Causal Fault Explanation at System Level},
+ booktitle  = {Methoden und Beschreibungssprachen zur Modellierung und Verifikation von Schaltungen und Systemen (MBMV)},
+ year       = {2026},
+ publisher  = {IEEE},
+ abstract   = {With Virtual Prototypes (VPs), it is possible to significantly improve the debugging process during system design as the interaction of components can be analyzed and internal variable values can be accessed. But in case of detecting a fault, it remains challenging to determine its specific cause, as the load of available information can be overwhelming. To address this issue, we propose to monitor a VP at runtime to extract an under-approximating formal model of the system behavior, and derive causal explanations by model checking. For this, we determine the sufficient condition of a failure based on the order and context of events. This is demonstrated using an abstracted controller for a wind turbine, implemented using a RISC-V VP.}
+}
+
 @inproceedings{DBLP:conf/icse-formalise/ThobenW25,
   author       = {Nicola Thoben and
                   Heike Wehrheim},
@@ -52,11 +149,42 @@
   isbn      = "978-3-032-04190-6"
 }
 
+
+
+@article{Bogumil.2026LocalExplanationsforClassification,
+ abstract = {Neural networks (NNs) have great potential to improve individualization of medicine, e.g., through analysis of signals. However, they are generally not interpretable. Understanding NN decisions is crucial, especially in safety-critical domains such as medicine. This work presents a new method to provide local explanations for classifications of signals made by NNs. Our method extends the Sig-LIME explanation method from one-dimensional signals to multidimensional signals by introducing new perturbation techniques. We evaluate the proposed method on an NN that classifies the positive end-expiratory pressure (PEEP) applied by a ventilator. The evaluation shows that the generated explanations are plausible, stable and concise.},
+ author = {Bogumil, Tim and Engeln, Ulrike and Schupp, Sibylle},
+ year = {2026},
+ title = {{Local Explanations for Classification of Ventilation Data by Neural Networks}},
+ keywords = {explainable artificial intelligence;lime},
+ volume = {3},
+ journal = {{Proceedings on Automation in Medical Engineering}},
+ doi = {10.18416/AUTOMED.2026.2511}
+}
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 2025
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@INPROCEEDINGS{11217492,
+  author={de Oliveira, Ivo Fagundes David and Klös, Verena},
+  booktitle={2025 IEEE International Conference on Autonomic Computing and Self-Organizing Systems Companion (ACSOS-C)},
+  title={Towards Autonomous Goal Management: A Decision Theoretic Approach and Key Challenges}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={14-21},
+  abstract={Goal management has been recognized as a core challenge in the development of true autonomous self-adaptive systems. Unlike behavioral adaptations, which can typically be justified by showing how a new behavior better aligns with a given goal, goal adaptations are much more difficult to design and even more so to justify. In this paper we investigate the goal management problem and the developments necessary towards achieving true self-autonomy at this level, and, we advocate for the use of decision theory tools in tackling this problem. More specifically we (i) describe a decision theory compatible model for the goal management problem, and we (ii) discuss six key challenges that we argue must be tackled in order to achieve true autonomous goal management. Our decision theory compatible model yields a new utility characterization theorem at an appropriate resolution to allow for algorithmic analysis, and facilitates further mathematical formulation of the challenges identified.},
+  keywords={Adaptation models;Analytical models;Computational modeling;Decision theory;Mathematical models;Distributed computing;goal management;adaptive algorithms;adaptation models;decision theory},
+  location={Tokyo, Japan},
+  url={https://doi.org/10.1109/ACSOS-C66519.2025.00023},
+  doi={10.1109/ACSOS-C66519.2025.00023}}
+
+
 @InProceedings{AMF:2025,
   bibtex_show = {true},
   abbr        = {ExCoS},
@@ -67,11 +195,30 @@
   year		    = 2025
 }
 
-@InProceedings{drechsler:aicare:25,
-  author     = {Rolf Drechsler and Christina Plump and Bernhard J. Berger},
-  title      = "Explanation in Bio-inspired Computing: Towards Understanding of AI Systems",
-  booktitle  = "1st International Conference on Artificial Intelligence for Computing, Astronomy and Renewable Energy",
-  year       = 2025,
-  publisher  = {IEEE},
-  abstract   = "Artificial intelligence methods and applications have recently seen a massive surge, partially caused by the success of neural networks in areas like image classification and LLMs for generating near-perfect natural-language texts. Unnoticed by the public, but highly important for many AI methods to function, bio-inspired optimisation techniques have also seen a rising usage. However, the more techniques are used, the more complex the explainability decreases. Even developers of Neural Networks can seldom state why the Neural Network’s results are what it is. The explainability of AI methods, as well as systems in general, is, however, essential for safety, security reasons, and to gain and maintain trust with system users. While research in explainability has therefore gained significant traction with prominent AI methods, such as neural networks, bio-inspired optimisation techniques have seen less research in this regard. The complexity of explainability with these algorithms lies in the use of populations and randomness. We present an approach to track individuals in bio-inspired optimisation techniques, aiming to improve our understanding of the quality of results from such optimisation algorithms. To that end, we introduce a data model, include this model in the standard implementations of these approaches, and provide a visualisation that allows for understanding the relational information of these individuals, yielding more insight into these optimisation techniques and providing a first step toward improved explainability."
+@INPROCEEDINGS{drechsler:aicare:25,
+  author={Rolf Drechsler and Christina Plump and Bernhard J. Berger},
+  booktitle={2025 International Conference on Artificial Intelligence for Computing, Astronomy and Renewable Energy (AICARE)}, 
+  title={Explanation in Bio-inspired Computing: Towards Understanding of AI Systems}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1--6},
+  doi={10.1109/AICARE66005.2025.11402700}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 2024
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{bergerb:itit:24,
+  url = {https://doi.org/10.1515/itit-2024-0072},
+  title = {Why less is sometimes more -- Using Boolean literals to solve 2048},
+  author = {Bernhard J. Berger and Christina Plump and Rolf Drechsler},
+  pages = {174--186},
+  volume = {66},
+  number = {4-5},
+  journal = {it - Information Technology},
+  doi = {doi:10.1515/itit-2024-0072},
+  year = {2024}
 }
