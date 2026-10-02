@@ -3,73 +3,105 @@ title: Imprint
 ---
 
 <div class="container">
-<h2>Imprint</h2>
+  {% include breadcrumb.html current_page=page.title %}
+</div>
 
-<h4 class="pt-3">Address</h4>
-<span class="fs-6">
-Institute of Embedded Systems<br>
-Hamburg University of Technology (TUHH)<br>
-Am Schwarzenberg-Campus 3 (E)<br>
-D-21071 Hamburg<br>
-Germany
-</span>
+<div class="container px-4 px-lg-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <h1 class="display-5 text-center pb-4">Imprint</h1>
 
-<h4 class="pt-3">Phone</h4>
-<span class="fs-6">
-+49 40 42878 3255
-</span>
+      <div class="row g-4 pb-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Address</h2>
+              <address class="mb-0">
+                Institute of Embedded Systems<br>
+                Hamburg University of Technology (TUHH)<br>
+                Am Schwarzenberg-Campus 3 (E)<br>
+                D-21071 Hamburg<br>
+                Germany
+              </address>
+            </div>
+          </div>
+        </div>
 
-<h4 class="pt-3">Fax</h4>
-<span class="fs-6">
-+49 40 42731 3612
-</span>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Contact</h2>
+              <dl class="row mb-0">
+                <dt class="col-3 fw-normal text-muted">Phone</dt>
+                <dd class="col-9">+49 40 42878 3255</dd>
+                <dt class="col-3 fw-normal text-muted">Fax</dt>
+                <dd class="col-9">+49 40 42731 3612</dd>
+                <dt class="col-3 fw-normal text-muted">Email</dt>
+                <dd class="col-9 mb-0">sekr-es(at)tuhh(dot)de</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
 
-<h4 class="pt-3">Email</h4>
-<span class="fs-6">
-sekr-es(at)tuhh(dot)de
-</span>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Publisher</h2>
+              <p class="mb-0">
+                The spokesperson of the Research Training Group CAUSE<br>
+                Prof. Dr. G&ouml;rschwin Fey<br>
+                Tel.: +49 40 42878 3697
+              </p>
+            </div>
+          </div>
+        </div>
 
-<h4 class="pt-3">Legal Form</h4>
-<span class="fs-6">
-The Technical University of Hamburg is a public corporation. It is legally represented by its president.
-</span>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Editorial Office</h2>
+              <p class="mb-0">
+                Prof. Dr. G&ouml;rschwin Fey<br>
+                Tel.: +49 40 42878 3697
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<h4 class="pt-3">Publisher</h4>
-<span class="fs-6">
-The spokesperson of the Research Training Group CAUSE<br>
-Prof. Dr. G&ouml;rschwin Fey<br>
-Tel.: +49 40 42878 3697
-</span>
+      <section class="pb-4">
+        <h2 class="h4">Legal Form</h2>
+        <p class="mb-0">The Technical University of Hamburg is a public corporation. It is legally represented by its president.</p>
+      </section>
 
-<h4 class="pt-3">Supervisory Authority</h4>
-<span class="fs-6">
-Behörde für Wissenschaft, Forschung und Gleichstellung der Freien und Hansestadt Hamburg<br>
-Hamburger Straße 37<br>
-22083 Hamburg 
-</span>
+      <section class="pb-4">
+        <h2 class="h4">Supervisory Authority</h2>
+        <address class="mb-0">
+          Behörde für Wissenschaft, Forschung und Gleichstellung der Freien und Hansestadt Hamburg<br>
+          Hamburger Straße 37<br>
+          22083 Hamburg
+        </address>
+      </section>
 
-<h4 class="pt-3">Disclaimer</h4>
-<span class="fs-6">
-We make every effort to ensure that the information on this website is current, complete and correct. Nevertheless, the occurrence of errors can not be completely ruled out. A guarantee for the completeness, correctness and last actuality can therefore not be accepted. We assume no liability for the content of external links. The content of the linked pages is the sole responsibility of their operators.<br>
-The publisher may, at its sole discretion, modify and / or discontinue this website without notice. It is not obligated to update the contents of this website.<br>
-Access and use of this website is at the user's own risk. The TUHH is not responsible and accepts no liability for damages, including direct, indirect, accidental, pre-determined or consequential damages, which are allegedly caused by or in connection with the access and / or use of this website. 
-</span>
+      <section class="pb-4">
+        <h2 class="h4">Disclaimer</h2>
+        <p>We make every effort to ensure that the information on this website is current, complete and correct. Nevertheless, the occurrence of errors can not be completely ruled out. A guarantee for the completeness, correctness and last actuality can therefore not be accepted. We assume no liability for the content of external links. The content of the linked pages is the sole responsibility of their operators.</p>
+        <p>The publisher may, at its sole discretion, modify and / or discontinue this website without notice. It is not obligated to update the contents of this website.</p>
+        <p class="mb-0">Access and use of this website is at the user's own risk. The TUHH is not responsible and accepts no liability for damages, including direct, indirect, accidental, pre-determined or consequential damages, which are allegedly caused by or in connection with the access and / or use of this website.</p>
+      </section>
 
-<h4 class="pt-3">Privacy</h4>
-<span class="fs-6">
-The use of our website is possible without prior notice of personal information. If you send us an e-mail, your e-mail address will only be used for correspondence with you.
-</span>
+      <section class="pb-4">
+        <h2 class="h4">Privacy</h2>
+        <p class="mb-0">The use of our website is possible without prior notice of personal information. If you send us an e-mail, your e-mail address will only be used for correspondence with you.</p>
+      </section>
 
-<h4 class="pt-3">Editorial Office</h4>
-<span class="fs-6">
-Prof. Dr. G&ouml;rschwin Fey<br>
-Tel.: +49 40 42878 3697
-</span>
-
-<h4 class="pt-3">Credits to</h4>
-<span class="fs-6">
-Lisa Jungmann (Logos, Graphics), Group of Computer Architecture, University of Bremen<br>
-Dr.-Ing. Gianluca Martino (Website Management), Institute of Embedded Systems, Hamburg University of Technology
-</span>
-
+      <section class="pb-4">
+        <h2 class="h4">Credits</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="pb-2"><strong>Lisa Jungmann</strong> (Logos, Graphics), Group of Computer Architecture, University of Bremen</li>
+          <li><strong>Dr.-Ing. Gianluca Martino</strong> (Website Management), Institute of Embedded Systems, Hamburg University of Technology</li>
+        </ul>
+      </section>
+    </div>
+  </div>
 </div>
