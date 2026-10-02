@@ -1,7 +1,7 @@
 ---
 short_name: berger
 name: Dr. Bernhard Berger 
-link: www.bergerbd.de
+link: https://bergerbd.de
 role: researcher
 ---
 
