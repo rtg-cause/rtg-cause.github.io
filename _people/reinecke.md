@@ -19,9 +19,15 @@ I am a research assistant and PhD candidate at the Insitute for Software Systems
 
 # Current Research
 - Self Repair of Timed Systems
+- Online Monitoring
 - Explainable Systems
+- Explanation-driven Distributed Goal Satisfaction
 
 # Other Interests
 - Automation
 - Distributed Systems & IoT
 - AI & XAI
+
+# Publications
+## November 2026 
+Anton Reinecke and Sibylle Schupp. Let's Talk This Out: Towards Explanation-based Distributed Goal Satisfaction. In Matt Luckcuck, Maike Schwammberger and Akhila Bairy (Eds.): Proceedings of the Eighth International Workshop on Formal Methods for Autonomous Systems (FMAS 2026), EPTCS 457, pp. 127–135, 2026. doi:10.4204/EPTCS.457.9. arXiv:2611.22405.
